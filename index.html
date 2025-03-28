@@ -3,90 +3,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minor Sex Trafficking Research | Health & Wellness Needs</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
-    <link rel="stylesheet" href="assets/css/header.css">
-    <link rel="stylesheet" href="assets/css/background.css">
-    <link rel="stylesheet" href="assets/css/report-button.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Coming Soon</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Add favicon -->
-    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4d74e6;
+            --secondary-color: #2c3e50;
+            --accent-color: #3498db;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+            /* Disable text selection */
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .page-wrapper {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            max-width: 800px;
+            text-align: center;
+            z-index: 10;
+            padding: 4rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            line-height: 1.3;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .coming-soon {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500;
+            font-size: 1.8rem;
+            margin: 1rem 0 2rem;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.6s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        /* Countdown Timer Styles */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            animation: fadeInUp 0.8s forwards;
+            animation-delay: 0.9s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .countdown-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 1rem;
+            width: 80px;
+            height: 90px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .countdown-value {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .countdown-divider {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 0 -0.5rem;
+        }
+
+        /* Background Elements */
+        .background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(77, 116, 230, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+            z-index: -2;
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Line Animations */
+        .lines-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .line {
+            position: absolute;
+            background: var(--primary-color);
+            opacity: 0.1;
+        }
+
+        .horizontal-line {
+            height: 1px;
+            width: 100%;
+            transform-origin: left center;
+            animation: lineGrow 8s infinite alternate ease-in-out;
+        }
+
+        .vertical-line {
+            width: 1px;
+            height: 100%;
+            transform-origin: top center;
+            animation: lineGrow 8s infinite alternate ease-in-out;
+        }
+
+        .horizontal-line:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .horizontal-line:nth-child(2) { top: 30%; animation-delay: 2s; }
+        .horizontal-line:nth-child(3) { top: 50%; animation-delay: 1s; }
+        .horizontal-line:nth-child(4) { top: 70%; animation-delay: 3s; }
+        .horizontal-line:nth-child(5) { top: 90%; animation-delay: 4s; }
+
+        .vertical-line:nth-child(6) { left: 10%; animation-delay: 0.5s; }
+        .vertical-line:nth-child(7) { left: 30%; animation-delay: 2.5s; }
+        .vertical-line:nth-child(8) { left: 50%; animation-delay: 1.5s; }
+        .vertical-line:nth-child(9) { left: 70%; animation-delay: 3.5s; }
+        .vertical-line:nth-child(10) { left: 90%; animation-delay: 4.5s; }
+
+        /* Background Words Animation */
+        .words-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .floating-word {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            color: rgba(77, 116, 230, 0.1);
+            font-weight: 700;
+            white-space: nowrap;
+            pointer-events: none;
+            animation: floatWord 20s infinite ease-in-out;
+            transform-origin: center center;
+        }
+        
+        @keyframes floatWord {
+            0% { 
+                transform: translate(calc(-50% + var(--offset-x)), calc(-50% + var(--offset-y))) rotate(var(--rotate-start));
+                opacity: 0;
+            }
+            10% { opacity: var(--max-opacity); }
+            90% { opacity: var(--max-opacity); }
+            100% { 
+                transform: translate(calc(-50% + var(--offset-x) + var(--move-x)), calc(-50% + var(--offset-y) + var(--move-y))) rotate(var(--rotate-end));
+                opacity: 0;
+            }
+        }
+
+        /* Footer styles from index.html */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        /* Header styles adapted from index.html */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            padding: 1rem 0;
+            color: var(--primary-color);
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineGrow {
+            0% { transform: scaleX(0); opacity: 0.05; }
+            50% { opacity: 0.1; }
+            100% { transform: scaleX(1); opacity: 0.05; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .coming-soon {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-box {
+                width: 70px;
+                height: 80px;
+                margin: 0.5rem;
+            }
+            
+            .countdown-divider {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="awareness-background">
-        <div class="blue-teal-gradient"></div>
-        <div class="awareness-symbol symbol-heart"><i class="fas fa-heart"></i></div>
-        <div class="awareness-symbol symbol-hand"><i class="fas fa-hand-holding-heart"></i></div>
-        <div class="awareness-line line-center"></div>
-        <div class="awareness-symbol symbol-ribbon"><i class="fas fa-ribbon"></i></div>
-        <div class="awareness-symbol symbol-star"><i class="fas fa-star"></i></div>
+
+    <div class="background"></div>
+    <div class="particles-container" id="particles-js"></div>
+    
+    <div class="words-container" id="words-container"></div>
+    
+    <div class="lines-container">
+        <div class="line horizontal-line"></div>
+        <div class="line horizontal-line"></div>
+        <div class="line horizontal-line"></div>
+        <div class="line horizontal-line"></div>
+        <div class="line horizontal-line"></div>
+        <div class="line vertical-line"></div>
+        <div class="line vertical-line"></div>
+        <div class="line vertical-line"></div>
+        <div class="line vertical-line"></div>
+        <div class="line vertical-line"></div>
     </div>
-
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="assets/images/logo.png" alt="MST Health Research Logo">
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-menu">
-                <li class="active"><a href="index.html">Home/About the Study</a></li>
-                <li><a href="research-questions.html">Research Questions</a></li>
-                <li><a href="key-findings.html">Key Findings</a></li>   
-                <li><a href="team.html">Research Team</a></li>
-                <li><a href="" class="full-report-btn"><strong>Read Full Report Here</strong></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1 class="animate-on-scroll">Understanding the Physical and Psychological Health and Wellness Needs of Minor Sex Trafficking Victims</h1>
-                <p class="animate-on-scroll">This study examines the health needs of young survivors of commercial sexual exploitation (CSE) in the U.S., utilizing survey data from 534 youth (ages 13-24) and in-depth interviews with 35 adult survivors to address critical gaps in research. It explores short- and long-term physical and psychological health concerns, elevated risk behaviors such as substance use and unsafe sexual practices, and the impact of CSE on overall well-being. Additionally, it assesses survivors’ access to healthcare services, the types of care they receive, and the barriers they face in obtaining necessary support. The findings underscore the urgent need for targeted interventions and improved healthcare accessibility to address the complex health challenges experienced by this vulnerable population.</p>
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="container">
-                <div class="grid-2">
-                    <div class="column animate-on-scroll">
-                        <h2>Introduction</h2>
-                        <p>The commercial sexual exploitation (CSE) of minors in the United States is a critical public safety and health issue, yet research specific to young people affected by CSE has been limited, often constrained by small, geographically specific samples. This study aims to address these gaps by utilizing a geographically diverse, representative sample of young people aged 13-24 who have experienced or are at high risk for CSE victimization. The research includes quantitative survey data from 534 youth across multiple regions of the U.S., offering a broader understanding of their healthcare needs and challenges.</p>
-                        <p>In addition, the study incorporates in-depth interviews with 35 adult survivors who experienced CSE as minors, providing valuable insights into the long-term effects of exploitation, healthcare access barriers, and recovery challenges. This mixed-methods approach helps illuminate the complex physical and mental health impacts of CSE, including trauma, substance use, and reproductive health issues.</p>
-                        <p>The findings from this study are critical for shaping healthcare policies, improving service delivery, and enhancing the identification and support of young CSE survivors, ultimately contributing to more effective strategies for addressing their health needs.</p>
-                        <a href="research-questions.html" class="btn">Explore Research Questions</a>
-                    </div>
-                    <div class="column animate-on-scroll">
-                        <div class="image-container">
-                            <img src="assets/images/research-overview.png" alt="Healthcare Research" class="flat-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    
+    <div class="page-wrapper">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <ul>
-                        <li><a href="key-findings.html">Key Findings</a></li>
-                        <li><a href="research-questions.html">Research Questions</a></li>
-                        <li><a href="team.html">Team</a></li>
-                    </ul>
+            <h1>Understanding the Physical and Psychological Health and Wellness Needs of Minor Sex Trafficking Victims</h1>
+            <div class="coming-soon">Coming Soon</div>
+            
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <div id="days" class="countdown-value">00</div>
+                    <div class="countdown-label">Days</div>
                 </div>
-                <div class="footer-col">
-                    <p>&copy; 2025 All rights reserved.</p>
+                <div class="countdown-divider">:</div>
+                <div class="countdown-box">
+                    <div id="hours" class="countdown-value">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-divider">:</div>
+                <div class="countdown-box">
+                    <div id="minutes" class="countdown-value">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-divider">:</div>
+                <div class="countdown-box">
+                    <div id="seconds" class="countdown-value">00</div>
+                    <div class="countdown-label">Seconds</div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    
 
-    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize particles.js
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": ["#4d74e6", "#3498db", "#2c3e50"]
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 3,
+                        "random": true,
+                        "anim": {
+                            "enable": true,
+                            "speed": 2,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#4d74e6",
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 2,
+                        "direction": "none",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        }
+                    }
+                },
+                "retina_detect": true
+            });
+            
+            // Create floating words
+            const wordsContainer = document.getElementById('words-container');
+            const words = [
+                'Care', 'Heart', 'Help', 'Support', 'Healing', 'Compassion', 
+                'Nurture', 'Empathy', 'Resilience', 'Strength', 'Hope', 'Recovery',
+                'Wellness', 'Health', 'Safety', 'Protection', 'Trust', 'Empowerment'
+            ];
+            
+            function createFloatingWord() {
+                const word = words[Math.floor(Math.random() * words.length)];
+                const floatingWord = document.createElement('div');
+                floatingWord.classList.add('floating-word');
+                floatingWord.textContent = word;
+                
+                // Random size
+                const size = Math.random() * 20 + 20; // 20-40px
+                floatingWord.style.fontSize = `${size}px`;
+                
+                // Random position
+                const offsetX = (Math.random() * 80 - 40) + 'vw'; // -40vw to 40vw
+                const offsetY = (Math.random() * 80 - 40) + 'vh'; // -40vh to 40vh
+                
+                // Random movement
+                const moveX = (Math.random() * 20 - 10) + 'vw'; // -10vw to 10vw
+                const moveY = (Math.random() * 20 - 10) + 'vh'; // -10vh to 10vh
+                
+                // Random rotation
+                const rotateStart = (Math.random() * 10 - 5) + 'deg'; // -5deg to 5deg
+                const rotateEnd = (Math.random() * 10 - 5) + 'deg'; // -5deg to 5deg
+                
+                // Random opacity
+                const maxOpacity = Math.random() * 0.15 + 0.05; // 0.05 to 0.2
+                
+                floatingWord.style.setProperty('--offset-x', offsetX);
+                floatingWord.style.setProperty('--offset-y', offsetY);
+                floatingWord.style.setProperty('--move-x', moveX);
+                floatingWord.style.setProperty('--move-y', moveY);
+                floatingWord.style.setProperty('--rotate-start', rotateStart);
+                floatingWord.style.setProperty('--rotate-end', rotateEnd);
+                floatingWord.style.setProperty('--max-opacity', maxOpacity);
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 15 + 15; // 15-30s
+                const delay = Math.random() * 15; // 0-15s
+                
+                floatingWord.style.animationDuration = `${duration}s`;
+                floatingWord.style.animationDelay = `${delay}s`;
+                
+                // Position in center (will be offset by CSS variables)
+                floatingWord.style.top = '50%';
+                floatingWord.style.left = '50%';
+                
+                wordsContainer.appendChild(floatingWord);
+                
+                // Remove the word after animation completes
+                setTimeout(() => {
+                    floatingWord.remove();
+                    createFloatingWord();
+                }, (duration + delay) * 1000);
+            }
+            
+            // Create initial set of words
+            for (let i = 0; i < 15; i++) {
+                createFloatingWord();
+            }
+            
+            // Countdown Timer
+            const countdownDate = new Date("April 2, 2025 12:00:00 EDT").getTime();
+            
+            // Update the countdown every second
+            const countdown = setInterval(function() {
+                // Get current date and time
+                const now = new Date().getTime();
+                
+                // Find the time difference between now and the countdown date
+                const distance = countdownDate - now;
+                
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Display the results
+                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+                
+                // If the countdown is over, display a message
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+            }, 1000);
+            
+            // Right-click prevention
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            // Prevent other ways to access context menu
+            document.addEventListener('keydown', function(e) {
+                // Prevent F12 key
+                if(e.key === 'F12') {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+I (inspect element)
+                if(e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+Shift+J (console)
+                if(e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+S (save page)
+                if(e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Prevent Ctrl+U (view source)
+                if(e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
