@@ -1,0 +1,52 @@
+/* Data display components styling */
+.research-data-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.data-icon {
+    flex: 0 0 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.data-content {
+    flex: 1;
+}
+
+.data-content h4 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.data-content p {
+    margin: 0;
+}
+
+/* Key insights styling */
+.key-insight {
+    background-color: rgba(77, 116, 230, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.key-insight h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.key-insight p {
+    margin: 0;
+    line-height: 1.5;
+}
