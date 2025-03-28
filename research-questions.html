@@ -489,7 +489,7 @@
                                 </div>
 
                                 <div style="height: 600px; margin: 20px auto;">
-                                    <canvas id="conditionsChart"></canvas>
+                                    <canvas id="healthConditionsChart"></canvas>
                                 </div>
 
                                 <script>
@@ -573,7 +573,7 @@
                                                 return;
                                             }
                                             
-                                            const chartCanvas = document.getElementById('conditionsChart');
+                                            const chartCanvas = document.getElementById('healthConditionsChart');
                                             if (!chartCanvas) {
                                                 console.error("Could not find conditionsChart canvas element");
                                                 return;
@@ -818,7 +818,7 @@
                 // Reinitialize charts when accordion is expanded
                 setTimeout(function() {
                     // Check if this accordion contains the Health Conditions Dashboard
-                    if (content.querySelector('#conditionsChart')) {
+                    if (content.querySelector('#healthConditionsChart')) {
                         console.log("Health Conditions section expanded - reinitializing chart");
                         // If the conditions chart initialization function exists, call it
                         if (typeof initializeConditionsChart === 'function') {
