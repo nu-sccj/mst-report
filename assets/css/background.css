@@ -1,0 +1,65 @@
+/* Background styling */
+.awareness-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #f7f9fc;
+    overflow: hidden;
+}
+
+.awareness-symbol {
+    position: absolute;
+    opacity: 0.1;
+    transform-origin: center;
+}
+
+.awareness-line {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(77, 116, 230, 0.2), transparent);
+    transform-origin: center;
+    opacity: 0.1;
+}
+
+.blue-teal-gradient {
+    background: linear-gradient(135deg, rgba(77, 116, 230, 0.05) 0%, rgba(72, 201, 176, 0.05) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Background symbol positions */
+.symbol-heart {
+    top: 10%; 
+    left: 20%; 
+    font-size: 50px;
+}
+
+.symbol-hand {
+    top: 30%; 
+    left: 50%; 
+    font-size: 30px;
+}
+
+.symbol-ribbon {
+    top: 60%; 
+    left: 30%; 
+    font-size: 40px;
+}
+
+.symbol-star {
+    top: 80%; 
+    left: 60%; 
+    font-size: 20px;
+}
+
+.line-center {
+    top: 50%; 
+    left: 0%; 
+    width: 100%;
+}
