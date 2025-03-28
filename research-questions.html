@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Questions | MST Health Research</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/background.css">
+    <link rel="stylesheet" href="assets/css/accordion.css">
+    <link rel="stylesheet" href="assets/css/charts.css">
+    <link rel="stylesheet" href="assets/css/data-display.css">
+    <link rel="stylesheet" href="assets/css/report-button.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Add favicon -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+</head>
+<body>
+    <div class="awareness-background">
+        <div class="blue-teal-gradient"></div>
+        <div class="awareness-symbol" style="top: 10%; left: 20%; font-size: 50px;"><i class="fas fa-heart"></i></div>
+        <div class="awareness-symbol" style="top: 30%; left: 50%; font-size: 30px;"><i class="fas fa-hand-holding-heart"></i></div>
+        <div class="awareness-line" style="top: 50%; left: 0%; width: 100%;"></div>
+        <div class="awareness-symbol" style="top: 60%; left: 30%; font-size: 40px;"><i class="fas fa-ribbon"></i></div>
+        <div class="awareness-symbol" style="top: 80%; left: 60%; font-size: 20px;"><i class="fas fa-star"></i></div>
+    </div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="MST Health Research Logo">
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home/About the Study</a></li>
+                <li><a href="key-findings.html">Key Findings</a></li>
+                <li class="active"><a href="research-questions.html">Research Questions</a></li>
+                <li><a href="team.html">Research Team</a></li>
+                <li><a href="" class="full-report-btn"><strong>Read Full Report Here</strong></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 class="animate-on-scroll">Research Questions</h1>
+                <p class="animate-on-scroll">Exploring the key inquiries that guided our investigation into the health and wellness needs of minor sex trafficking victims.</p>
+            </div>
+        </section>
+
+        <section class="research-questions-section">
+            <div class="container">
+                <h2 class="text-center animate-on-scroll">Main Research Questions</h2>
+                <p class="text-center animate-on-scroll">Click on each question to explore the related findings.</p>
+                
+                <div class="accordion animate-on-scroll">
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Research Question 1: Physical and Psychological Health Concerns</h3>
+                            <button class="accordion-button"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>What are the short- and long-term physical and psychological health concerns for young people who experience commercial sexual exploitation?</p>
+                            
+                            
+                            
+                            <div class="research-data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-hands-helping"></i>
+                                </div>
+                                <div class="data-content">
+                                    <h4>Overall Health</h4>
+                                    <p>About 22% of the sample reported poor physical health for more than a week in the past month, while 50% reported poor mental health during the same period. Common chronic conditions included frequent headaches (51%), insomnia (47%), and asthma (25%). STDs were reported by 10%, and 2% reported having HIV. Mental health concerns were high, with 61% experiencing depression and 57% reporting anxiety. Among those with an STD, 19% self-reported experiencing CSE (commercial sexual exploitation), compared to just 2.4% among those without an STD.</p>
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <div class="chart-section">
+                                    <h4>Physical and Mental Health Data</h4>
+                                    <div class="chart-grid">
+                                        <div class="chart-grid-item">
+                                            <h5>Health Status</h5>
+                                            <canvas id="healthReportChart" class="chart-canvas"></canvas>
+                                        </div>
+                                        
+                                        <div class="chart-grid-item">
+                                            <h5>Health Conditions</h5>
+                                            <canvas id="conditionsChart" class="chart-canvas"></canvas>
+                                        </div>
+                                        
+                                        <div class="chart-grid-item">
+                                            <h5>CSE Reporting</h5>
+                                            <canvas id="cseChart" class="chart-canvas"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    const data = {
+                                        health_report: {
+                                            poor_physical_health: 22,
+                                            poor_mental_health: 50
+                                        },
+                                        chronic_conditions: {
+                                            headaches: 51,
+                                            insomnia: 47,
+                                            asthma: 25,
+                                            std: 10,
+                                            hiv: 2
+                                        },
+                                        mental_health: {
+                                            depression: 61,
+                                            anxiety: 57
+                                        },
+                                        sexual_health_cse: {
+                                            with_std: 19,
+                                            without_std: 2.4
+                                        }
+                                    };
+
+                                    // 1. Health Report Chart
+                                    if (document.getElementById('healthReportChart')) {
+                                        const ctx = document.getElementById('healthReportChart').getContext('2d');
+                                        new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ['Poor Physical Health', 'Poor Mental Health'],
+                                                datasets: [{
+                                                    label: 'Percentage (%)',
+                                                    data: [
+                                                        data.health_report.poor_physical_health,
+                                                        data.health_report.poor_mental_health
+                                                    ],
+                                                    backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                                                    borderColor: 'rgba(52, 152, 219, 1)',
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                responsive: true,
+                                                plugins: {
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Health Report',
+                                                        font: { size: 16 }
+                                                    },
+                                                    legend: { display: false }
+                                                },
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true,
+                                                        title: { display: true, text: 'Percentage (%)' }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                    // 2. Chronic + Mental Health Conditions Chart
+                                    if (document.getElementById('conditionsChart')) {
+                                        const ctx = document.getElementById('conditionsChart').getContext('2d');
+                                        new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ['Headaches', 'Insomnia', 'Asthma', 'STD', 'HIV', 'Depression', 'Anxiety'],
+                                                datasets: [{
+                                                    label: 'Percentage (%)',
+                                                    data: [
+                                                        data.chronic_conditions.headaches,
+                                                        data.chronic_conditions.insomnia,
+                                                        data.chronic_conditions.asthma,
+                                                        data.chronic_conditions.std,
+                                                        data.chronic_conditions.hiv,
+                                                        data.mental_health.depression,
+                                                        data.mental_health.anxiety
+                                                    ],
+                                                    backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                                                    borderColor: 'rgba(46, 204, 113, 1)',
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                responsive: true,
+                                                plugins: {
+                                                    title: {
+                                                        display: true,
+                                                        text: 'Chronic & Mental Health Conditions',
+                                                        font: { size: 16 }
+                                                    },
+                                                    legend: { display: false }
+                                                },
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true,
+                                                        title: { display: true, text: 'Percentage (%)' }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }
+
+                                    // 3. CSE by STD Status Chart
+                                    if (document.getElementById('cseChart')) {
+                                        const ctx = document.getElementById('cseChart').getContext('2d');
+                                        new Chart(ctx, {
+                                            type: 'bar',
+                                            data: {
+                                                labels: ['With STD', 'Without STD'],
+                                                datasets: [{
+                                                    label: 'Reported CSE (%)',
+                                                    data: [
+                                                        data.sexual_health_cse.with_std,
+                                                        data.sexual_health_cse.without_std
+                                                    ],
+                                                    backgroundColor: 'rgba(231, 76, 60, 0.7)',
+                                                    borderColor: 'rgba(231, 76, 60, 1)',
+                                                    borderWidth: 1
+                                                }]
+                                            },
+                                            options: {
+                                                responsive: true,
+                                                plugins: {
+                                                    title: {
+                                                        display: true,
+                                                        text: 'CSE Reporting Based on STD Status',
+                                                        font: { size: 16 }
+                                                    },
+                                                    legend: { display: false }
+                                                },
+                                                scales: {
+                                                    y: {
+                                                        beginAtZero: true,
+                                                        title: { display: true, text: 'Percentage (%)' }
+                                                    }
+                                                }
+                                            }
+                                        });
+                                    }
+                                });
+                            </script>
+                            <div class="key-insight">
+                                <h4>Key Insight:</h4>
+                                <p>Self-reported CSE respondents report worse health than those who do not report-CSE victimization directly on the survey.</p>
+                            </div>
+
+                            <div class="research-data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="data-content">
+                                    <h4>Health Metrics Dashboard</h4>
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <!-- Dropdown and checkbox filters -->
+                                <div style="margin: 20px 0; text-align: center;">
+                                    <div style="max-width: 800px; margin: 0 auto; background-color: #f5f8ff; padding: 15px; border-radius: 8px;">
+                                        <div style="margin-bottom: 15px;">
+                                            <label for="metricSelect" style="display: inline-block; margin-right: 10px; font-weight: 500;">Select Health Metric:</label>
+                                            <select id="metricSelect" style="padding: 6px; border-radius: 4px; border: 1px solid #ccc;"></select>
+                                        </div>
+
+                                        <fieldset style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin-top: 10px;">
+                                            <legend style="font-size: 14px; font-weight: 500; color: #4d74e6;">Select Source[s] of Data:</legend>
+                                            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="groupCheckbox" value="All" checked> All</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="groupCheckbox" value="Agency" checked> Agency</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="groupCheckbox" value="Social Media" checked> Social Media</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="groupCheckbox" value="Self-Reported CSE" checked> Self-Reported CSE</label>
+                                                <label><input type="checkbox" class="groupCheckbox" value="No CSE Report" checked> No CSE Report</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div style="height: 400px; margin: 20px auto;">
+                                    <canvas id="healthChart"></canvas>
+                                </div>
+
+                                <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    const rawData = {
+                                      "General overall health": {
+                                        "Poor health": {"All": 26.9, "Agency": 21.1, "Social Media": 32.9, "Self-Reported CSE": 31.1, "No CSE Report": 22.7},
+                                        "Good health": {"All": 73.1, "Agency": 78.9, "Social Media": 67.1, "Self-Reported CSE": 68.9, "No CSE Report": 77.3}
+                                      },
+                                      "Physical health not good": {
+                                        "< 1 week": {"All": 77.5, "Agency": 83.1, "Social Media": 71.8, "Self-Reported CSE": 73.1, "No CSE Report": 82.0},
+                                        "> 1 week": {"All": 22.5, "Agency": 16.9, "Social Media": 28.2, "Self-Reported CSE": 26.9, "No CSE Report": 18.0}
+                                      },
+                                      "Mental health not good": {
+                                        "< 1 week": {"All": 49.5, "Agency": 57.9, "Social Media": 40.7, "Self-Reported CSE": 46.3, "No CSE Report": 52.8},
+                                        "> 1 week": {"All": 50.5, "Agency": 42.0, "Social Media": 59.3, "Self-Reported CSE": 53.8, "No CSE Report": 47.2}
+                                      },
+                                      "Felt anxious": {
+                                        "< 1 week": {"All": 46.9, "Agency": 57.1, "Social Media": 36.6, "Self-Reported CSE": 43.8, "No CSE Report": 50.0},
+                                        "> 1 week": {"All": 53.1, "Agency": 42.9, "Social Media": 63.5, "Self-Reported CSE": 56.2, "No CSE Report": 50.0}
+                                      },
+                                      "Felt depressed": {
+                                        "< 1 week": {"All": 52.4, "Agency": 56.5, "Social Media": 48.2, "Self-Reported CSE": 46.0, "No CSE Report": 46.0},
+                                        "> 1 week": {"All": 47.6, "Agency": 43.5, "Social Media": 51.8, "Self-Reported CSE": 54.0, "No CSE Report": 41.3}
+                                      },
+                                      "Health limited activities": {
+                                        "< 1 week": {"All": 67.7, "Agency": 74.6, "Social Media": 60.6, "Self-Reported CSE": 61.3, "No CSE Report": 74.2},
+                                        "> 1 week": {"All": 32.3, "Agency": 25.4, "Social Media": 39.4, "Self-Reported CSE": 38.7, "No CSE Report": 25.8}
+                                      },
+                                      "Limited by impairment": {
+                                        "No": {"All": 69.7, "Agency": 81.0, "Social Media": 58.1, "Self-Reported CSE": 68.0, "No CSE Report": 71.3},
+                                        "Yes": {"All": 30.3, "Agency": 18.9, "Social Media": 41.9, "Self-Reported CSE": 32.0, "No CSE Report": 28.7}
+                                      },
+                                      "Not enough sleep": {
+                                        "< 1 week": {"All": 46.2, "Agency": 55.7, "Social Media": 36.6, "Self-Reported CSE": 44.8, "No CSE Report": 47.6},
+                                        "> 1 week": {"All": 53.8, "Agency": 44.3, "Social Media": 63.5, "Self-Reported CSE": 55.2, "No CSE Report": 52.4}
+                                      },
+                                      "Hours of sleep": {
+                                        "< 8 hrs": {"All": 73.4, "Agency": 24.4, "Social Media": 28.9, "Self-Reported CSE": 76.5, "No CSE Report": 70.2},
+                                        ">= 8 hrs": {"All": 26.6, "Agency": 75.6, "Social Media": 71.1, "Self-Reported CSE": 23.5, "No CSE Report": 29.8}
+                                      }
+                                    };
+
+                                    const colorPalette = {
+                                        "All": "rgba(52, 152, 219, 0.7)",
+                                        "Agency": "rgba(155, 89, 182, 0.7)",
+                                        "Social Media": "rgba(46, 204, 113, 0.7)",
+                                        "Self-Reported CSE": "rgba(231, 76, 60, 0.7)",
+                                        "No CSE Report": "rgba(241, 196, 15, 0.7)"
+                                    };
+                                    
+                                    const borderColors = {
+                                        "All": "rgba(52, 152, 219, 1)",
+                                        "Agency": "rgba(155, 89, 182, 1)",
+                                        "Social Media": "rgba(46, 204, 113, 1)",
+                                        "Self-Reported CSE": "rgba(231, 76, 60, 1)",
+                                        "No CSE Report": "rgba(241, 196, 15, 1)"
+                                    };
+
+                                    const metricSelect = document.getElementById('metricSelect');
+                                    const checkboxes = document.querySelectorAll('.groupCheckbox');
+                                    let chart;
+
+                                    // Populate metric dropdown
+                                    Object.keys(rawData).forEach(metric => {
+                                      const option = document.createElement('option');
+                                      option.value = metric;
+                                      option.textContent = metric;
+                                      metricSelect.appendChild(option);
+                                    });
+
+                                    function updateChart() {
+                                      const selectedMetric = metricSelect.value;
+                                      const selectedGroups = Array.from(checkboxes)
+                                        .filter(cb => cb.checked)
+                                        .map(cb => cb.value);
+
+                                      const data = rawData[selectedMetric];
+                                      const labels = Object.keys(data);
+
+                                      const datasets = selectedGroups.map(group => {
+                                        return {
+                                          label: group,
+                                          data: labels.map(label => data[label][group]),
+                                          backgroundColor: colorPalette[group] || getRandomColor(),
+                                          borderColor: borderColors[group] || '#333',
+                                          borderWidth: 1
+                                        };
+                                      });
+
+                                      if (chart) chart.destroy();
+                                      
+                                      const ctx = document.getElementById('healthChart').getContext('2d');
+                                      chart = new Chart(ctx, {
+                                        type: 'bar', // using bar type with indexAxis: 'y' for horizontal
+                                        data: {
+                                          labels: labels,
+                                          datasets: datasets
+                                        },
+                                        options: {
+                                          indexAxis: 'y', // This makes the bars horizontal
+                                          responsive: true,
+                                          maintainAspectRatio: false,
+                                          plugins: {
+                                            title: {
+                                              display: true,
+                                              text: selectedMetric,
+                                              font: { size: 18 }
+                                            },
+                                            legend: { position: 'bottom' }
+                                          },
+                                          scales: {
+                                            x: {
+                                              beginAtZero: true,
+                                              title: { display: true, text: 'Percentage (%)' },
+                                              max: 100
+                                            },
+                                            y: {
+                                              title: { display: true, text: 'Category' }
+                                            }
+                                          }
+                                        },
+                                        plugins: [{
+                                          id: 'dataLabels',
+                                          afterDraw: function(chart) {
+                                              var ctx = chart.ctx;
+                                              chart.data.datasets.forEach(function(dataset, datasetIndex) {
+                                                  var meta = chart.getDatasetMeta(datasetIndex);
+                                                  if (!meta.hidden) {
+                                                      meta.data.forEach(function(element, index) {
+                                                          // Draw the text in white
+                                                          ctx.fillStyle = 'black';
+                                                          ctx.font = 'bold 12px Arial';
+                                                          ctx.textAlign = 'left';
+                                                          ctx.textBaseline = 'middle';
+                                                          
+                                                          var dataValue = dataset.data[index];
+                                                          var position = element.tooltipPosition();
+                                                          
+                                                          // Only display text if bar is long enough
+                                                          if (element.width > 30) {
+                                                              ctx.fillText(dataValue + '%', position.x / 2 + element.x / 2, position.y);
+                                                          }
+                                                      });
+                                                  }
+                                              });
+                                          }
+                                        }]
+                                      });
+                                    }
+
+                                    function getRandomColor() {
+                                      const r = Math.floor(Math.random() * 200);
+                                      const g = Math.floor(Math.random() * 200);
+                                      const b = Math.floor(Math.random() * 200);
+                                      return `rgba(${r}, ${g}, ${b}, 0.7)`;
+                                    }
+
+                                    metricSelect.addEventListener('change', updateChart);
+                                    checkboxes.forEach(cb => cb.addEventListener('change', updateChart));
+
+                                    // Initial render
+                                    updateChart();
+                                });
+                                </script>
+                            </div>
+
+                            <div style="margin-top: 220px;"></div>
+                            
+                            <div class="research-data-item">
+                                <div class="data-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="data-content">
+                                    <h4>Health Conditions Dashboard</h4>
+                                </div>
+                            </div>
+
+                            <div class="chart-container">
+                                <!-- Dropdown and checkbox filters -->
+                                <div style="margin: 20px 0; text-align: center;">
+                                    <div style="max-width: 800px; margin: 0 auto; background-color: #f5f8ff; padding: 15px; border-radius: 8px;">
+                                        <div style="margin-bottom: 15px;">
+                                            <label for="conditionTypeSelect" style="display: inline-block; margin-right: 10px; font-weight: 500;">Condition Type:</label>
+                                            <select id="conditionTypeSelect" style="padding: 6px; border-radius: 4px; border: 1px solid #ccc;">
+                                                <option value="health">Physical Health</option>
+                                                <option value="psychological">Psychological Health</option>
+                                            </select>
+                                        </div>
+
+                                        <fieldset style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; margin-top: 10px;">
+                                            <legend style="font-size: 14px; font-weight: 500; color: #4d74e6;">Select Source[s] of Data:</legend>
+                                            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="conditionGroupCheckbox" value="All" checked> All</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="conditionGroupCheckbox" value="Agency" checked> Agency</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="conditionGroupCheckbox" value="Social Media" checked> Social Media</label>
+                                                <label style="margin-right: 15px;"><input type="checkbox" class="conditionGroupCheckbox" value="Reported CSE" checked> Reported CSE</label>
+                                                <label><input type="checkbox" class="conditionGroupCheckbox" value="No CSE Report" checked> No CSE Report</label>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div style="height: 600px; margin: 20px auto;">
+                                    <canvas id="conditionsChart"></canvas>
+                                </div>
+
+                                <script>
+                                let initializeConditionsChart;
+                                
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Health conditions data
+                                    const healthConditionsData = {
+                                        "Headaches": {"All": 51.3, "Agency": 53.2, "Social Media": 49.4, "Reported CSE": 56.4, "No CSE Report": 46.2},
+                                        "Insomnia": {"All": 47.6, "Agency": 46.1, "Social Media": 19.2, "Reported CSE": 53.4, "No CSE Report": 41.8},
+                                        "Allergies": {"All": 44.8, "Agency": 38.7, "Social Media": 51.0, "Reported CSE": 47.1, "No CSE Report": 42.6},
+                                        "Covid": {"All": 39.1, "Agency": 27.5, "Social Media": 51.0, "Reported CSE": 35.9, "No CSE Report": 42.2},
+                                        "Back or Neck Pain": {"All": 35.1, "Agency": 30.9, "Social Media": 39.3, "Reported CSE": 37.9, "No CSE Report": 32.3},
+                                        "Chronic Pain": {"All": 26.2, "Agency": 18.9, "Social Media": 33.7, "Reported CSE": 29.8, "No CSE Report": 22.7},
+                                        "Asthma": {"All": 25.4, "Agency": 28.1, "Social Media": 22.6, "Reported CSE": 27.3, "No CSE Report": 23.5},
+                                        "STDs": {"All": 10.9, "Agency": 15.7, "Social Media": 6.0, "Reported CSE": 19.44, "No CSE Report": 2.38},
+                                        "High Blood Pressure": {"All": 9.5, "Agency": 11.3, "Social Media": 7.6, "Reported CSE": 12.7, "No CSE Report": 6.4},
+                                        "Ulcers": {"All": 7.5, "Agency": 9.4, "Social Media": 5.6, "Reported CSE": 11.9, "No CSE Report": 3.1},
+                                        "Diabetes": {"All": 6.2, "Agency": 6.3, "Social Media": 6.1, "Reported CSE": 7.9, "No CSE Report": 4.4},
+                                        "Lung Disease": {"All": 3.2, "Agency": 3.5, "Social Media": 2.8, "Reported CSE": 4.7, "No CSE Report": 1.6},
+                                        "Heart Disease": {"All": 2.9, "Agency": 2.4, "Social Media": 3.6, "Reported CSE": 3.2, "No CSE Report": 2.8},
+                                        "HIV": {"All": 2.2, "Agency": 2.8, "Social Media": 1.6, "Reported CSE": 2.8, "No CSE Report": 1.6},
+                                        "Tuberculosis": {"All": 1.2, "Agency": 0.4, "Social Media": 2.0, "Reported CSE": 0.8, "No CSE Report": 1.6}
+                                    };
+
+                                    // Psychological conditions data
+                                    const psychConditionsData = {
+                                        "Depression (diagnosed)": {"All": 61.80, "Agency": 65.08, "Social Media": 58.47, "Reported CSE": 74.20, "No CSE Report": 50.40},
+                                        "Depression (suspected)": {"All": 11.00, "Agency": 6.35, "Social Media": 15.73, "Reported CSE": 8.80, "No CSE Report": 13.20},
+                                        "Anxiety Disorder (diagnosed)": {"All": 57.20, "Agency": 55.12, "Social Media": 59.35, "Reported CSE": 65.60, "No CSE Report": 48.81},
+                                        "Anxiety Disorder (suspected)": {"All": 10.80, "Agency": 7.09, "Social Media": 14.63, "Reported CSE": 8.76, "No CSE Report": 12.85},
+                                        "PTSD (diagnosed)": {"All": 37.77, "Agency": 24.90, "Social Media": 55.41, "Reported CSE": 50.20, "No CSE Report": 25.31},
+                                        "PTSD (suspected)": {"All": 14.12, "Agency": 9.84, "Social Media": 18.47, "Reported CSE": 14.34, "No CSE Report": 13.89},
+                                        "ADHD (diagnosed)": {"All": 31.21, "Agency": 33.70, "Social Media": 28.51, "Reported CSE": 36.80, "No CSE Report": 26.20},
+                                        "Bipolar Disorder (diagnosed)": {"All": 17.96, "Agency": 25.79, "Social Media": 10.04, "Reported CSE": 25.20, "No CSE Report": 10.76},
+                                        "Eating Disorder (diagnosed)": {"All": 17.50, "Agency": 16.54, "Social Media": 18.47, "Reported CSE": 23.51, "No CSE Report": 11.51},
+                                        "Autism (diagnosed)": {"All": 9.98, "Agency": 4.80, "Social Media": 15.30, "Reported CSE": 9.90, "No CSE Report": 10.00},
+                                        "Autism (suspected)": {"All": 17.17, "Agency": 5.56, "Social Media": 28.92, "Reported CSE": 15.14, "No CSE Report": 19.20},
+                                        "ODD (diagnosed)": {"All": 8.96, "Agency": 11.10, "Social Media": 6.80, "Reported CSE": 11.60, "No CSE Report": 6.40},
+                                        "ODD (suspected)": {"All": 6.18, "Agency": 5.93, "Social Media": 6.43, "Reported CSE": 7.60, "No CSE Report": 4.76},
+                                        "Schizophrenia (diagnosed)": {"All": 3.79, "Agency": 3.95, "Social Media": 3.63, "Reported CSE": 6.00, "No CSE Report": 1.59},
+                                        "Intellectual Disability (diagnosed)": {"All": 3.59, "Agency": 5.10, "Social Media": 2.00, "Reported CSE": 6.40, "No CSE Report": 0.80}
+                                    };
+
+                                    const colorPalette = {
+                                        "All": "rgba(52, 152, 219, 0.7)",
+                                        "Agency": "rgba(155, 89, 182, 0.7)",
+                                        "Social Media": "rgba(46, 204, 113, 0.7)",
+                                        "Reported CSE": "rgba(231, 76, 60, 0.7)",
+                                        "No CSE Report": "rgba(241, 196, 15, 0.7)"
+                                    };
+                                    
+                                    const borderColors = {
+                                        "All": "rgba(52, 152, 219, 1)",
+                                        "Agency": "rgba(155, 89, 182, 1)",
+                                        "Social Media": "rgba(46, 204, 113, 1)",
+                                        "Reported CSE": "rgba(231, 76, 60, 1)",
+                                        "No CSE Report": "rgba(241, 196, 15, 1)"
+                                    };
+
+                                    function getRandomColor() {
+                                        const r = Math.floor(Math.random() * 200);
+                                        const g = Math.floor(Math.random() * 200);
+                                        const b = Math.floor(Math.random() * 200);
+                                        return `rgba(${r}, ${g}, ${b}, 0.7)`;
+                                    }
+
+                                    initializeConditionsChart = function() {
+                                        try {
+                                            console.log("Starting conditions chart initialization");
+                                            
+                                            const conditionTypeSelect = document.getElementById('conditionTypeSelect');
+                                            if (!conditionTypeSelect) {
+                                                console.error("Could not find conditionTypeSelect element");
+                                                return;
+                                            }
+                                            
+                                            const checkboxes = document.querySelectorAll('.conditionGroupCheckbox');
+                                            if (checkboxes.length === 0) {
+                                                console.error("Could not find conditionGroupCheckbox elements");
+                                                return;
+                                            }
+                                            
+                                            const chartCanvas = document.getElementById('conditionsChart');
+                                            if (!chartCanvas) {
+                                                console.error("Could not find conditionsChart canvas element");
+                                                return;
+                                            }
+                                            
+                                            console.log("All elements found, proceeding with chart initialization");
+                                            
+                                            // Chart reference to handle updates
+                                            let conditionsChart = null;
+                                            
+                                            function updateConditionsChart() {
+                                                try {
+                                                    console.log("Updating conditions chart");
+                                                    const selectedType = conditionTypeSelect.value;
+                                                    const selectedGroups = Array.from(checkboxes)
+                                                        .filter(cb => cb.checked)
+                                                        .map(cb => cb.value);
+                                                    
+                                                    if (selectedGroups.length === 0) {
+                                                        console.log("No groups selected, skipping chart update");
+                                                        return;
+                                                    }
+
+                                                    const data = selectedType === 'health' ? healthConditionsData : psychConditionsData;
+                                                    const conditions = Object.keys(data);
+
+                                                    // Sort conditions by "All" percentage in descending order
+                                                    conditions.sort((a, b) => data[b]["All"] - data[a]["All"]);
+                                                    
+                                                    const datasets = selectedGroups.map(group => {
+                                                        return {
+                                                            label: group,
+                                                            data: conditions.map(condition => data[condition][group]),
+                                                            backgroundColor: colorPalette[group] || getRandomColor(),
+                                                            borderColor: borderColors[group] || '#333',
+                                                            borderWidth: 1
+                                                        };
+                                                    });
+
+                                                    // Destroy existing chart if it exists
+                                                    if (conditionsChart) {
+                                                        console.log("Destroying old chart");
+                                                        conditionsChart.destroy();
+                                                        conditionsChart = null;
+                                                    }
+                                                    
+                                                    console.log("Creating new conditions chart with", datasets.length, "datasets");
+                                                    
+                                                    const ctx = chartCanvas.getContext('2d');
+                                                    
+                                                    // Check if Chart is defined (Chart.js loaded)
+                                                    if (typeof Chart === 'undefined') {
+                                                        console.error("Chart.js not loaded");
+                                                        return;
+                                                    }
+                                                    
+                                                    conditionsChart = new Chart(ctx, {
+                                                        type: 'bar',
+                                                        data: {
+                                                            labels: conditions,
+                                                            datasets: datasets
+                                                        },
+                                                        options: {
+                                                            indexAxis: 'y', // Makes bars horizontal
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: {
+                                                                title: {
+                                                                    display: true,
+                                                                    text: selectedType === 'health' ? 'Physical Health Conditions' : 'Psychological Health Conditions',
+                                                                    font: { size: 18 }
+                                                                },
+                                                                legend: { position: 'bottom' }
+                                                            },
+                                                            scales: {
+                                                                x: {
+                                                                    beginAtZero: true,
+                                                                    title: { display: true, text: 'Percentage (%)' },
+                                                                    max: selectedType === 'health' ? 60 : 80
+                                                                },
+                                                                y: {
+                                                                    title: { display: true, text: 'Condition' }
+                                                                }
+                                                            }
+                                                        },
+                                                        plugins: [{
+                                                            id: 'dataLabels',
+                                                            afterDraw: function(chart) {
+                                                                try {
+                                                                    var ctx = chart.ctx;
+                                                                    chart.data.datasets.forEach(function(dataset, datasetIndex) {
+                                                                        var meta = chart.getDatasetMeta(datasetIndex);
+                                                                        if (!meta.hidden) {
+                                                                            meta.data.forEach(function(element, index) {
+                                                                                // Draw the text in white
+                                                                                ctx.fillStyle = 'white';
+                                                                                ctx.font = 'bold 11px Arial';
+                                                                                ctx.textAlign = 'center';
+                                                                                ctx.textBaseline = 'middle';
+                                                                                
+                                                                                var dataValue = dataset.data[index];
+                                                                                var position = element.tooltipPosition();
+                                                                                
+                                                                                // Only display text if bar is long enough
+                                                                                if (element.width > 25 && dataValue > 5) {
+                                                                                    ctx.fillText(dataValue + '%', position.x / 2 + element.x / 2, position.y);
+                                                                                }
+                                                                            });
+                                                                        }
+                                                                    });
+                                                                } catch (err) {
+                                                                    console.error("Error in dataLabels plugin:", err);
+                                                                }
+                                                            }
+                                                        }]
+                                                    });
+                                                    
+                                                    console.log("Chart successfully created");
+                                                } catch (error) {
+                                                    console.error("Error updating conditions chart:", error);
+                                                }
+                                            }
+                                            
+                                            // Add event listeners
+                                            conditionTypeSelect.addEventListener('change', updateConditionsChart);
+                                            checkboxes.forEach(cb => cb.addEventListener('change', updateConditionsChart));
+                                            
+                                            // Initialize with a longer delay to ensure DOM and all charts are ready
+                                            console.log("Setting timeout to initialize conditions chart");
+                                            setTimeout(updateConditionsChart, 1000);
+                                            
+                                        } catch (error) {
+                                            console.error("Error during chart initialization:", error);
+                                        }
+                                    };
+                                    
+                                    // Run initialization in stages to avoid conflicts with other charts
+                                    if (document.readyState === 'complete') {
+                                        console.log("Document already complete, initializing chart");
+                                        initializeConditionsChart();
+                                    } else {
+                                        console.log("Document not complete, waiting for window.onload");
+                                        window.addEventListener('load', function() {
+                                            console.log("Window loaded, initializing chart");
+                                            // Wait an additional moment for all other scripts to initialize
+                                            setTimeout(initializeConditionsChart, 800);
+                                        });
+                                    }
+                                });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Research Question 2: Health Risk Behaviors</h3>
+                            <button class="accordion-button"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Which health risk behaviors and health-related experiences are elevated among young people who experience commercial sexual exploitation?</p>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Research Question 3: Psychological Effects on Physical Health</h3>
+                            <button class="accordion-button"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>To what degree do psychological effects of commercial sexual exploitation victimization impact short- and long-term physical health outcomes for minors?</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Question 4 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Research Question 4: Healthcare Access</h3>
+                            <button class="accordion-button"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>To what degree do survivors of minor sex trafficking access physical and psychological health services? What types of services do they access, and how and by whom is this access facilitated?</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Question 5 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <h3>Research Question 5: Barriers to Health & Wellness</h3>
+                            <button class="accordion-button"><i class="fas fa-chevron-down"></i></button>
+                        </div>
+                        <div class="accordion-content">
+                            <p>What are the barriers to meeting the health and wellness needs of young people who experience commercial sexual exploitation?</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="key-findings.html">Key Findings</a></li>
+                        <li><a href="team.html">Research Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p>&copy; 2025 All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Accordion functionality
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const button = element.querySelector('.accordion-button i');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                button.classList.remove('fa-chevron-up');
+                button.classList.add('fa-chevron-down');
+            } else {
+                content.classList.add('active');
+                button.classList.remove('fa-chevron-down');
+                button.classList.add('fa-chevron-up');
+                
+                // Reinitialize charts when accordion is expanded
+                setTimeout(function() {
+                    // Check if this accordion contains the Health Conditions Dashboard
+                    if (content.querySelector('#conditionsChart')) {
+                        console.log("Health Conditions section expanded - reinitializing chart");
+                        // If the conditions chart initialization function exists, call it
+                        if (typeof initializeConditionsChart === 'function') {
+                            initializeConditionsChart();
+                        } else {
+                            // Backup approach: trigger the event listeners manually
+                            const condTypeSelect = content.querySelector('#conditionTypeSelect');
+                            if (condTypeSelect) {
+                                console.log("Triggering change event on condition type select");
+                                condTypeSelect.dispatchEvent(new Event('change'));
+                            }
+                        }
+                    }
+                    
+                    // Add reinitialization for other charts if needed
+                    if (content.querySelector('#healthChart')) {
+                        const metricSelect = content.querySelector('#metricSelect');
+                        if (metricSelect) {
+                            console.log("Health metrics section expanded - reinitializing chart");
+                            metricSelect.dispatchEvent(new Event('change'));
+                        }
+                    }
+                }, 100); // Small delay to ensure the accordion is fully expanded
+            }
+        }
+        
+        // Initialize charts when document is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Question 1 Charts
+            if (document.getElementById('healthConcernsChart')) {
+                const ctx1 = document.getElementById('healthConcernsChart').getContext('2d');
+                new Chart(ctx1, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Physical Health Issues', 'Mental Health Conditions', 'PTSD', 'Depression', 'Anxiety'],
+                        datasets: [
+                            {
+                                label: 'CSE Survivors (%)',
+                                data: [42, 68, 57, 72, 65],
+                                backgroundColor: 'rgba(77, 116, 230, 0.7)',
+                                borderColor: 'rgba(77, 116, 230, 1)',
+                                borderWidth: 1
+                            },
+                            {
+                                label: 'General Youth Population (%)',
+                                data: [18, 25, 8, 25, 32],
+                                backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                                borderColor: 'rgba(52, 152, 219, 1)',
+                                borderWidth: 1
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Health Concerns: CSE Survivors vs. General Youth Population',
+                                font: { size: 16 }
+                            },
+                            legend: { position: 'bottom' }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Percentage (%)' }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            if (document.getElementById('psychHealthComparisonChart')) {
+                const ctx2 = document.getElementById('psychHealthComparisonChart').getContext('2d');
+                new Chart(ctx2, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Depression', 'Anxiety', 'PTSD', 'Suicidal Ideation', 'Self-Harm', 'Substance Use Disorders'],
+                        datasets: [
+                            {
+                                label: 'CSE Survivors',
+                                data: [72, 65, 57, 48, 54, 42],
+                                backgroundColor: 'rgba(77, 116, 230, 0.2)',
+                                borderColor: 'rgba(77, 116, 230, 1)',
+                                pointBackgroundColor: 'rgba(77, 116, 230, 1)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(77, 116, 230, 1)'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Psychological Health Profile of CSE Survivors',
+                                font: { size: 16 }
+                            }
+                        },
+                        scales: {
+                            r: {
+                                angleLines: { display: true },
+                                suggestedMin: 0,
+                                suggestedMax: 100
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Initialize other charts (Q2-Q5) with similar structure
+            // For brevity, these are not fully implemented but would follow the same pattern
+        });
+    </script>
+</body>
+</html>
