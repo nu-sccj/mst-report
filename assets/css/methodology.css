@@ -1,0 +1,220 @@
+/* Methodology Page Specific Styles */
+
+/* Measure Cards Styling */
+.measure-category {
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    height: 100%;
+}
+
+.category-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-header i {
+    font-size: 24px;
+}
+
+.category-header h3 {
+    margin: 0;
+}
+
+.measure-cards {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.measure-card {
+    background-color: rgba(77, 116, 230, 0.05);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    text-align: center;
+    transition: var(--transition);
+    border-left: 3px solid var(--primary-color);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.measure-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.measure-card h4 {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.measure-card p {
+    font-size: 12px;
+    color: var(--dark-muted);
+    margin-bottom: 10px;
+}
+
+.view-details-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: var(--transition);
+}
+
+.view-details-btn:hover {
+    background-color: #3b5fc9;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    width: 60%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--dark-muted);
+}
+
+.modal-close:hover {
+    color: var(--text-color);
+}
+
+/* Qualitative Section Styles */
+.compact-list {
+    list-style: none;
+    padding-left: 5px;
+    margin-bottom: 0;
+}
+
+.compact-list li {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.highlight-list {
+    list-style: none;
+    padding-left: 5px;
+    margin-bottom: 15px;
+}
+
+.highlight-list li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.highlight-list li:before {
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-top-30 {
+    margin-top: 30px;
+}
+
+.data-box {
+    background-color: rgba(77, 116, 230, 0.05);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.data-box h4 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.small-text {
+    font-size: 12px;
+    color: var(--dark-muted);
+    margin-top: 10px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: rgba(77, 116, 230, 0.1);
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.data-table tr:hover {
+    background-color: rgba(77, 116, 230, 0.03);
+}
+
+/* Chart Containers */
+.chart-container {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--box-shadow);
+}
