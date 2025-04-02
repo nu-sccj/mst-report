@@ -1,0 +1,247 @@
+/* Submenu styles */
+.research-submenu {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.research-submenu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.research-submenu li {
+    margin: 5px 10px;
+}
+
+.research-submenu a {
+    color: var(--primary-color);
+    display: block;
+    font-weight: 500;
+    padding: 8px 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+}
+
+.research-submenu a:hover {
+    background-color: #e9effd;
+}
+
+.research-submenu a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Navigation button styles */
+.question-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-button:hover {
+    background-color: #3a5bbf;
+}
+
+.nav-button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Key findings section */
+.key-findings {
+    background-color: #f0f7ff;
+    border-left: 4px solid var(--primary-color);
+    margin: 25px 0;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+.key-findings h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* Card styling for question content */
+.question-story {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.question-story h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid #f0f4fc;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.question-story h4 {
+    font-weight: 600;
+    color: #2a2a2a;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.question-story .research-data-item {
+    background-color: #fafcff;
+    border-radius: 8px;
+    margin: 25px 0;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease;
+}
+
+.question-story .research-data-item:hover {
+    transform: translateY(-3px);
+}
+
+.question-story .chart-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 30px 0;
+    padding: 20px;
+}
+
+/* Dropdown menu styles */
+.nav-menu li.has-submenu {
+    position: relative;
+}
+
+.nav-menu li.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    min-width: 250px;
+    padding: 10px 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+}
+
+.submenu li {
+    margin: 0;
+    width: 100%;
+}
+
+.submenu a {
+    color: var(--text-color);
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.submenu a:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-color);
+}
+
+/* Question card styles for research questions overview */
+.question-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.question-card h3 {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.question-card p {
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.question-card .card-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #4d74e6;
+    opacity: 0.5;
+}
+
+.question-card .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4d74e6;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.question-card .btn:hover {
+    background-color: #3a5bbf;
+}
+
+.instructions {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f7f9ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.instructions h3 {
+    color: #4d74e6;
+    margin-bottom: 15px;
+}
+
+.instructions p {
+    color: #555;
+    line-height: 1.6;
+}

@@ -1,0 +1,92 @@
+/* Team page styling */
+.university-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    width: 100%;
+}
+
+.university-logo img {
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.university-logo img:hover {
+    transform: scale(1.05);
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.team-member {
+    flex: 0 0 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.member-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.member-position {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.member-social {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.member-social a {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.member-social a:hover {
+    color: var(--primary-color);
+}
