@@ -1,0 +1,58 @@
+.full-report-btn {
+    background-color: #0d3063;
+    color: white !important;
+    padding: 10px 18px !important;
+    border-radius: 30px;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: none;
+    margin-left: 15px;
+    display: inline-block;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* Hover Effects */
+.full-report-btn:hover {
+    background-color: #cde9fe;
+    color: #0d3063 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(13, 48, 99, 0.3);
+}
+
+/* Continuous Shine Animation */
+.full-report-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%; /* Reduced from 150% to 100% to keep it within button bounds */
+    height: 100%;
+    background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+    transform: skewX(-20deg);
+    animation: continuousShine 4s linear infinite;
+}
+
+@keyframes continuousShine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+
+/* Ensure menu items have their own hit areas */
+.nav-menu li {
+    position: relative;
+    z-index: 2;
+}
+
+.nav-menu li a {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+}

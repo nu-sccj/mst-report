@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Health Risk Behaviors | Research Question 2</title>
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <link rel="stylesheet" href="assets/css/animations.css">
+      <link rel="stylesheet" href="assets/css/background.css">
+      <link rel="stylesheet" href="assets/css/submenu.css">
+      <link rel="stylesheet" href="assets/css/charts.css">
+      <link rel="stylesheet" href="assets/css/cards.css">
+      <link rel="stylesheet" href="assets/css/data-display.css">
+      <link rel="stylesheet" href="assets/css/report-button.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <!-- Add favicon -->
+      <link rel="icon" href="assets/images/logo.png" type="image/png">
+      <!-- Component loader script -->
+      <script src="assets/js/component-loader.js"></script>
+   </head>
+   <body>
+      <div class="awareness-background">
+         <div class="blue-teal-gradient"></div>
+         <div class="awareness-symbol symbol-heart"><i class="fas fa-heart"></i></div>
+         <div class="awareness-symbol symbol-hand"><i class="fas fa-hand-holding-heart"></i></div>
+         <div class="awareness-symbol symbol-ribbon"><i class="fas fa-ribbon"></i></div>
+         <div class="awareness-symbol symbol-star"><i class="fas fa-star"></i></div>
+         <div class="awareness-symbol symbol-globe"><i class="fas fa-globe"></i></div>
+         <div class="awareness-symbol symbol-users"><i class="fas fa-users"></i></div>
+         <div class="awareness-symbol symbol-hands-helping"><i class="fas fa-people-carry"></i></div>
+         <div class="awareness-symbol symbol-heart-pulse"><i class="fas fa-heartbeat"></i></div>
+         <div class="awareness-symbol symbol-seedling"><i class="fas fa-seedling"></i></div>
+         <div class="awareness-symbol symbol-dove"><i class="fas fa-dove"></i></div>
+         <div class="awareness-symbol symbol-hands-holding"><i class="fas fa-hands-helping"></i></div>
+         <div class="awareness-symbol symbol-child"><i class="fas fa-child"></i></div>
+         <div class="awareness-symbol symbol-shield"><i class="fas fa-shield-alt"></i></div>
+         <div class="awareness-symbol symbol-home"><i class="fas fa-home"></i></div>
+         <div class="awareness-symbol symbol-medical"><i class="fas fa-briefcase-medical"></i></div>
+         <div class="awareness-symbol symbol-education"><i class="fas fa-graduation-cap"></i></div>
+         <div class="awareness-symbol symbol-balance"><i class="fas fa-balance-scale"></i></div>
+         <div class="awareness-symbol symbol-heart-2"><i class="fas fa-heart"></i></div>
+         <div class="awareness-symbol symbol-hands-2"><i class="fas fa-hands"></i></div>
+      </div>
+      <header>
+         <nav>
+            <div class="logo">
+               <a href="index.html"><img src="assets/images/logo.png" alt="MST Health Research Logo"></a>
+            </div>
+            <div class="menu-toggle">
+               <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+               <li><a href="index.html">About the Study</a></li>
+               <li class="active has-submenu"><a href="research-question-home.html" style="pointer-events: all; cursor: pointer;">Research Questions</a>
+                  <ul class="submenu">
+                     <li><a href="research-question-home.html">Research Questions Home</a></li>
+                     <li><a href="research-question1.html">Physical & Psychological Health</a></li>
+                     <li><a href="research-question2.html">Health Risk Behaviors</a></li>
+                     <li><a href="research-question3.html">Psychological Effects on Physical Health</a></li>
+                     <li><a href="research-question4.html">Healthcare Access</a></li>
+                     <li><a href="research-question5.html">Barriers to Health & Wellness</a></li>
+                  </ul>
+               </li>
+               <li><a href="methodology.html">Methodology</a></li>
+               <li><a href="recommendations.html">Recommendations</a></li>
+               <li><a href="publications.html">Publications</a></li>
+               <li><a href="team.html">Research Team</a></li>
+               <li><a href="assets/Understanding Physical and Psychological Health MST_Technical Report.pdf" class="full-report-btn" target="_blank"><strong>Read Full Report Here</strong></a></li>
+            </ul>
+         </nav>
+      </header>
+      <main>
+         <section class="hero" style="padding: 2rem 0;">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px;">
+               <h1 style="color: #0d3063; font-size: 2.6rem; text-align: center; margin-bottom: 1rem;" class="animate-on-scroll">What <strong>health risk behaviors</strong> are associated with the experience of commercial sexual exploitation?</h1>
+            </div>
+         </section>
+         <section class="content-section">
+            <div class="container">
+
+               <!-- Key Findings -->
+               <div class="key-finding">
+                  <div class="finding-content">
+                     <div class="finding-text">
+                        <p>A substantial percentage of participants reported experiencing Adverse Childhood Experiences (ACEs) and high rates of risky behaviors, creating additional health vulnerabilities.</p>
+                        <ul class="finding-stats">
+                           <li><span class="stat-number">32%</span> reported that a caregiver had been incarcerated</li>
+                           <li><span class="stat-number">73%</span> reported emotional neglect</li>
+                           <li><span class="stat-number">66%</span> reported a caregiver had a mental illness</li>
+                           <li><span class="stat-number">44.3%</span> experienced verbal abuse in relationships</li>
+                           <li><span class="stat-number">29.6%</span> experienced physical abuse in relationships</li>
+                        </ul>
+                        <p class="insight-note">Those who self-reported exploitation were more likely than those who did not report exploitation to indicate having experienced each ACE assessed. They also reported elevated levels of substance use, including alcohol, vaping, and cigarette use, with a minority reporting use of heroin, cocaine, and methamphetamine.</p>
+                     </div>
+                     <div class="finding-visual">
+                        <!-- <canvas id="riskBehaviorsChart" class="finding-chart"></canvas> -->
+                        <div class="finding-image">
+                           <img src="assets/images/findings/3.png" alt="CSE survivors face substantial barriers to accessing appropriate healthcare" />
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+                  <!-- ACEs -->
+                  <div class="data-visualization" style="margin: 30px 0; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 64, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(77, 116, 230, 0.2); position: relative; overflow: auto; max-height: calc(100vh - 200px);">
+                    <div class="research-data-item">
+                         <div class="data-icon">
+                            <i class="fas fa-venus-mars"></i>
+                        </div>
+                        <div class="data-content">
+                            <h4 style="color: #0d3063; font-size: var(--font-size-h4);">Adverse Childhood Experiences (ACEs)</h4>
+                            <p style="font-size: 18px;">A substantial percentage of participants reported experiencing ACEs. For example, 32% reported that a caregiver had been incarcerated, 73% reported experiencing emotional neglect, and 66% reported a caregiver had a mental illness. These rates are substantially higher than those reported in national samples of youth, not specific to CSE. Within our sample, those youth who reported exploitation were more likely than those who did not report exploitation to indicate having experienced each ACE assessed.</p>
+                        </div>
+                    </div>
+                    <!-- Dropdown for ACES category -->
+                    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto; background: rgba(255, 255, 255, 0.5); border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <!-- Category Dropdown -->
+                        <div>
+                           <label for="acesTypeSelect" style="display: block; font-weight: 600; margin-bottom: 6px; color: #333;">Category</label>
+                           <select id="acesTypeSelect" style="
+                              padding: 10px 12px;
+                              border-radius: 8px;
+                              border: 2px solid #000000;
+                              min-width: 200px;
+                              background: white;
+                              font-weight: 500;
+                              color: #000000;
+                              box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+                              transition: border-color 0.3s, box-shadow 0.3s;" 
+                              onfocus="this.style.borderColor='#000000'; this.style.boxShadow='0 0 6px rgba(0, 0, 0, 0.2)'"
+                              onblur="this.style.borderColor='#000000'; this.style.boxShadow='0 1px 5px rgba(0, 0, 0, 0.2)'">
+                              <option value="household">Household Challenges</option>
+                              <option value="abuse">Abuse</option>
+                              <option value="neglect">Neglect</option>
+                           </select>
+                        </div>
+                        <!-- Checkboxes -->
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                           <span style="font-size: 14px; font-weight: 600; color: #4d74e6; margin-bottom: 6px;">Source(s) of Data</span>
+                           <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="acesGroupCheckbox" value="All"> All
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="acesGroupCheckbox" value="Agency" checked> Agency
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="acesGroupCheckbox" value="Social Media" checked> Social Media
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="acesGroupCheckbox" value="Reported CSE" checked> Self Reported CSE
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="acesGroupCheckbox" value="No CSE Reported" checked> No Self Reported CSE
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="acesChartContainer" style="min-height: 500px; margin: 20px auto; width: 100%; max-width: 1000px;">
+                        <canvas id="acesChart"></canvas>
+                     </div>
+                     <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // ACES data - simulated data based on research patterns
+                            const acesHouseholdData = {
+                                "Household Substance Abuse": {"All": 47.5, "Agency": 52.3, "Social Media": 42.1, "Reported CSE": 67.8, "No CSE Reported": 33.2},
+                                "Household Mental Illness": {"All": 39.2, "Agency": 36.5, "Social Media": 42.4, "Reported CSE": 58.2, "No CSE Reported": 30.6},
+                                "Parental Separation/Divorce": {"All": 65.3, "Agency": 68.1, "Social Media": 62.1, "Reported CSE": 72.4, "No CSE Reported": 61.2},
+                                "Mother Treated Violently": {"All": 29.7, "Agency": 34.2, "Social Media": 24.8, "Reported CSE": 52.3, "No CSE Reported": 18.9},
+                                "Incarcerated Household Member": {"All": 24.6, "Agency": 31.7, "Social Media": 16.9, "Reported CSE": 38.1, "No CSE Reported": 19.3}
+                            };
+                            
+                            const acesAbuseData = {
+                                "Physical Abuse": {"All": 32.8, "Agency": 38.6, "Social Media": 26.5, "Reported CSE": 58.1, "No CSE Reported": 23.4},
+                                "Emotional Abuse": {"All": 45.1, "Agency": 49.3, "Social Media": 40.7, "Reported CSE": 73.6, "No CSE Reported": 32.8},
+                                "Sexual Abuse": {"All": 27.9, "Agency": 33.4, "Social Media": 22.1, "Reported CSE": 62.4, "No CSE Reported": 12.5}
+                            };
+                            
+                            const acesNeglectData = {
+                                "Physical Neglect": {"All": 22.5, "Agency": 26.1, "Social Media": 18.7, "Reported CSE": 41.8, "No CSE Reported": 14.3},
+                                "Emotional Neglect": {"All": 37.6, "Agency": 42.3, "Social Media": 32.8, "Reported CSE": 59.7, "No CSE Reported": 29.1}
+                            };
+                        
+                            // Color settings for data sources
+                            const colorPalette = {
+                                "All": "rgba(52, 152, 219, 0.7)",        // Blue
+                                "Agency": "rgba(231, 76, 60, 0.7)",       // Red
+                                "Social Media": "rgba(46, 204, 113, 0.7)", // Green
+                                "Reported CSE": "rgba(155, 89, 182, 0.7)", // Purple
+                                "No CSE Reported": "rgba(243, 156, 18, 0.7)" // Orange
+                            };
+                            
+                            const borderColors = {
+                                "All": "rgba(52, 152, 219, 1)",
+                                "Agency": "rgba(231, 76, 60, 1)",
+                                "Social Media": "rgba(46, 204, 113, 1)",
+                                "Reported CSE": "rgba(155, 89, 182, 1)",
+                                "No CSE Reported": "rgba(243, 156, 18, 1)"
+                            };
+                        
+                            // Elements
+                            const acesTypeSelect = document.getElementById('acesTypeSelect');
+                            const acesCheckboxes = document.querySelectorAll('.acesGroupCheckbox');
+                            let acesChart;
+                            
+                            // Function to update the ACES chart
+                            function updateAcesChart() {
+                                const selectedType = acesTypeSelect.value;
+                                let acesData;
+                                
+                                // Get the appropriate data based on selection
+                                if (selectedType === 'household') {
+                                    acesData = acesHouseholdData;
+                                } else if (selectedType === 'abuse') {
+                                    acesData = acesAbuseData;
+                                } else if (selectedType === 'neglect') {
+                                    acesData = acesNeglectData;
+                                }
+                                
+                                // Get selected data sources (from checkboxes)
+                                const selectedSources = [];
+                                acesCheckboxes.forEach(checkbox => {
+                                    if (checkbox.checked) {
+                                        selectedSources.push(checkbox.value);
+                                    }
+                                });
+                                
+                                // Get labels (ACE types)
+                                const labels = Object.keys(acesData);
+                                
+                                // Create datasets for each selected source
+                                const datasets = selectedSources.map(source => {
+                                    return {
+                                        label: source,
+                                        data: labels.map(label => acesData[label][source]),
+                                        backgroundColor: colorPalette[source] || getRandomColor(),
+                                        borderColor: borderColors[source] || getRandomColor(true),
+                                        borderWidth: 1
+                                    };
+                                });
+                                
+                                // Destroy existing chart if it exists
+                                if (acesChart) {
+                                    acesChart.destroy();
+                                }
+                                
+                                // Create the chart
+                                const ctx = document.getElementById('acesChart').getContext('2d');
+                                acesChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: datasets
+                                    },
+                                    options: {
+                                        indexAxis: 'y', // This makes the bars horizontal
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        barPercentage: 0.8,
+                                        categoryPercentage: 0.9,
+                                        plugins: {
+                                            title: {
+                                                display: true,
+                                                font: { size: 18 }
+                                            },
+                                            legend: { position: 'bottom' }
+                                        },
+                                        scales: {
+                                            x: {
+                                                beginAtZero: true,
+                                                max: 100,
+                                                grid: {
+                                                    drawTicks: true,
+                                                    tickLength: 10,
+                                                    tickColor: '#ccc',
+                                                    tickWidth: 1,
+                                                    tickAlign: 'outside',
+                                                    drawBorder: true,
+                                                    borderDash: [5, 5],
+                                                    borderDashOffset: 0.0,
+                                                    borderWidth: 1,
+                                                    borderColor: '#ccc',
+                                                    drawOnChartArea: true,
+                                                    display: true,
+                                                    ticks: {
+                                                        callback: function(value) {
+                                                            if (value === 25 || value === 50 || value === 75) {
+                                                                return value + '%';
+                                                            } else {
+                                                                return '';
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    plugins: [{
+                                        id: 'dataLabels',
+                                        afterDraw: function(chart) {
+                                            var ctx = chart.ctx;
+                                            chart.data.datasets.forEach(function(dataset, datasetIndex) {
+                                                var meta = chart.getDatasetMeta(datasetIndex);
+                                                if (!meta.hidden) {
+                                                    meta.data.forEach(function(element, index) {
+                                                        // Draw the text in black
+                                                        ctx.fillStyle = 'black';
+                                                        ctx.font = 'bold 12px Arial';
+                                                        ctx.textAlign = 'left';
+                                                        ctx.textBaseline = 'middle';
+                                                        
+                                                        var dataValue = dataset.data[index];
+                                                        var position = element.tooltipPosition();
+                                                        
+                                                        // Display value for all bars regardless of size
+                                                        ctx.fillText(dataValue + '%', position.x / 2 + element.x / 2, position.y);
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    }]
+                                });
+                            }
+                        
+                            function getRandomColor(isOpaque = false) {
+                                const r = Math.floor(Math.random() * 200);
+                                const g = Math.floor(Math.random() * 200);
+                                const b = Math.floor(Math.random() * 200);
+                                return isOpaque ? 
+                                    `rgba(${r}, ${g}, ${b}, 1)` :
+                                    `rgba(${r}, ${g}, ${b}, 0.7)`;
+                            }
+                        
+                            // Add event listeners
+                            acesTypeSelect.addEventListener('change', updateAcesChart);
+                            acesCheckboxes.forEach(checkbox => {
+                                checkbox.addEventListener('change', updateAcesChart);
+                            });
+                            
+                            // Initialize the chart on load
+                            updateAcesChart();
+                        });
+                     </script>
+                 </div>
+                  <!-- Dating Violence Chart -->
+                  <div class="data-visualization" style="margin: 30px 0; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 64, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(77, 116, 230, 0.2); position: relative; overflow: auto; max-height: calc(100vh - 200px);">
+                    <div class="research-data-item">
+                        <div class="data-icon">
+                           <i class="fas fa-venus-mars"></i>
+                        </div>
+                        <div class="data-content">
+                           <h4 style="color: #0d3063; font-size: var(--font-size-h4);">Abuse in Dating and Intimate Relationships</h4>
+                           <p style="font-size: 18px;">A larger percentage of participants reported that they had experienced abuse in their dating relationships, including verbal abuse (44.3%) and physical abuse (29.6%). The rates of abuse in dating and intimate relationships were elevated among participants who self-reported exploitation in the survey.</p>
+                        </div>
+                     </div>
+                     <!-- Filter options -->
+                     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto; background: rgba(255, 255, 255, 0.5); border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <!-- Checkboxes -->
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                           <span style="font-size: 14px; font-weight: 600; color: #4d74e6; margin-bottom: 6px;">Source(s) of Data</span>
+                           <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="datingViolenceCheckbox" value="All"> All
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="datingViolenceCheckbox" value="Agency" checked> Agency
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="datingViolenceCheckbox" value="Social Media" checked> Social Media
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="datingViolenceCheckbox" value="CSE Self-Reported" checked> CSE Self-Reported
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="datingViolenceCheckbox" value="No CSE Self-Reported" checked> No CSE Self-Reported
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="datingViolenceChartContainer" style="min-height: 500px; margin: 20px auto; width: 100%; max-width: 1000px;">
+                        <canvas id="datingViolenceChart"></canvas>
+                     </div>
+                     <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Dating Violence data from the table
+                            const datingViolenceData = {
+                                "Disclosed any dating violence": {"All": 58.61, "Agency": 74.44, "Social Media": 42.91, "CSE Self-Reported": 78.07, "No CSE Self-Reported": 38.87},
+                                "They yelled, screamed, or swore at me": {"All": 44.25, "Agency": 63.98, "Social Media": 24.52, "CSE Self-Reported": 65.27, "No CSE Self-Reported": 23.08},
+                                "Made me feel like I couldn't break up": {"All": 43.21, "Agency": 53.82, "Social Media": 32.57, "CSE Self-Reported": 63.5, "No CSE Self-Reported": 22.69},
+                                "Looked through phone or other devices without consent": {"All": 38.05, "Agency": 54.58, "Social Media": 21.46, "CSE Self-Reported": 57.41, "No CSE Self-Reported": 18.46},
+                                "Asked to give one or more passwords": {"All": 34.48, "Agency": 50.96, "Social Media": 18.01, "CSE Self-Reported": 53.05, "No CSE Self-Reported": 15.77},
+                                "They slapped, pushed, shoved, or shook me": {"All": 29.25, "Agency": 49.24, "Social Media": 9.20, "CSE Self-Reported": 51.71, "No CSE Self-Reported": 6.54},
+                                "Forced or pressured to take nude photos": {"All": 28.68, "Agency": 37.79, "Social Media": 19.54, "CSE Self-Reported": 46.01, "No CSE Self-Reported": 11.15}
+                            };
+                        
+                            // Color settings for data sources
+                            const colorPalette = {
+                                "All": "rgba(52, 152, 219, 0.7)",        // Blue
+                                "Agency": "rgba(231, 76, 60, 0.7)",       // Red
+                                "Social Media": "rgba(46, 204, 113, 0.7)", // Green
+                                "CSE Self-Reported": "rgba(155, 89, 182, 0.7)", // Purple
+                                "No CSE Self-Reported": "rgba(243, 156, 18, 0.7)", // Orange
+                            };
+                            
+                            const borderColors = {
+                                "All": "rgba(52, 152, 219, 1)",
+                                "Agency": "rgba(231, 76, 60, 1)",
+                                "Social Media": "rgba(46, 204, 113, 1)",
+                                "CSE Self-Reported": "rgba(155, 89, 182, 1)",
+                                "No CSE Self-Reported": "rgba(243, 156, 18, 1)"
+                            };
+                        
+                            // Elements
+                            const datingViolenceCheckboxes = document.querySelectorAll('.datingViolenceCheckbox');
+                            let datingViolenceChart;
+                            
+                            // Function to update the chart
+                            function updateDatingViolenceChart() {
+                                // Get selected data sources (from checkboxes)
+                                const selectedSources = [];
+                                datingViolenceCheckboxes.forEach(checkbox => {
+                                    if (checkbox.checked) {
+                                        selectedSources.push(checkbox.value);
+                                    }
+                                });
+                                
+                                // Get labels (types of dating violence)
+                                const labels = Object.keys(datingViolenceData);
+                                
+                                // Create datasets for each selected source
+                                const datasets = selectedSources.map(source => {
+                                    return {
+                                        label: source,
+                                        data: labels.map(label => datingViolenceData[label][source]),
+                                        backgroundColor: colorPalette[source] || getRandomColor(),
+                                        borderColor: borderColors[source] || getRandomColor(true),
+                                        borderWidth: 1
+                                    };
+                                });
+                                
+                                // Destroy existing chart if it exists
+                                if (datingViolenceChart) {
+                                    datingViolenceChart.destroy();
+                                }
+                                
+                                // Create the chart
+                                const ctx = document.getElementById('datingViolenceChart').getContext('2d');
+                                datingViolenceChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: datasets
+                                    },
+                                    options: {
+                                        indexAxis: 'y', // This makes the bars horizontal
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        barPercentage: 0.8,
+                                        categoryPercentage: 0.9,
+                                        plugins: {
+                                            title: {
+                                                display: true,
+                                                // text: 'Dating Violence Experiences (%)',
+                                                font: { size: 18 }
+                                            },
+                                            legend: { position: 'bottom' }
+                                        },
+                                        scales: {
+                                            x: {
+                                                beginAtZero: true,
+                                                max: 100,
+                                                grid: {
+                                                    drawTicks: true,
+                                                    tickLength: 10,
+                                                    tickColor: '#ccc',
+                                                    tickWidth: 1,
+                                                    tickAlign: 'outside',
+                                                    drawBorder: true,
+                                                    borderDash: [5, 5],
+                                                    borderDashOffset: 0.0,
+                                                    borderWidth: 1,
+                                                    borderColor: '#ccc',
+                                                    drawOnChartArea: true,
+                                                    display: true,
+                                                    ticks: {
+                                                        callback: function(value) {
+                                                            if (value === 25 || value === 50 || value === 75) {
+                                                                return value + '%';
+                                                            } else {
+                                                                return '';
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    plugins: [{
+                                        id: 'dataLabels',
+                                        afterDraw: function(chart) {
+                                            var ctx = chart.ctx;
+                                            chart.data.datasets.forEach(function(dataset, datasetIndex) {
+                                                var meta = chart.getDatasetMeta(datasetIndex);
+                                                if (!meta.hidden) {
+                                                    meta.data.forEach(function(element, index) {
+                                                        // Draw the text in black
+                                                        ctx.fillStyle = 'black';
+                                                        ctx.font = 'bold 12px Arial';
+                                                        ctx.textAlign = 'left';
+                                                        ctx.textBaseline = 'middle';
+                                                        
+                                                        var dataValue = dataset.data[index];
+                                                        var position = element.tooltipPosition();
+                                                        
+                                                        // Display value for all bars regardless of size
+                                                        ctx.fillText(dataValue + '%', position.x / 2 + element.x / 2, position.y);
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    }]
+                                });
+                            }
+                        
+                            // Helper function for random colors (reusing from ACEs chart)
+                            function getRandomColor(isOpaque = false) {
+                                const r = Math.floor(Math.random() * 200);
+                                const g = Math.floor(Math.random() * 200);
+                                const b = Math.floor(Math.random() * 200);
+                                return isOpaque ? 
+                                    `rgba(${r}, ${g}, ${b}, 1)` :
+                                    `rgba(${r}, ${g}, ${b}, 0.7)`;
+                            }
+                        
+                            // Add event listeners
+                            datingViolenceCheckboxes.forEach(checkbox => {
+                                checkbox.addEventListener('change', updateDatingViolenceChart);
+                            });
+                            
+                            // Initialize the chart on load
+                            updateDatingViolenceChart();
+                        });
+                     </script>
+                  </div>
+                  <!-- Substance Use Chart -->
+                  <div class="data-visualization" style="margin: 30px 0; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 64, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(77, 116, 230, 0.2); position: relative; overflow: auto; max-height: calc(100vh - 200px);">
+                    <!-- Visual connection to data section -->
+                     <div class="research-data-item">
+                        <div class="data-icon">
+                           <i class="fas fa-smoking"></i>
+                        </div>
+                        <div class="data-content">
+                           <h4 style="color: #0d3063; font-size: var(--font-size-h4);">Substance Use</h4>
+                           <p style="font-size: 18px;">Participants, especially those who reported exploitation, reported high rates of substance use, including alcohol, vaping, and cigarette use. Though a notable minority, some youth also reported the use of heroin, cocaine, and methamphetamines.</p>
+                        </div>
+                     </div>
+                     <!-- Filter options -->
+                     <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; padding: 20px; max-width: 1000px; margin: 0 auto; background: rgba(255, 255, 255, 0.5); border-radius: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <!-- Checkboxes -->
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                           <span style="font-size: 14px; font-weight: 600; color: #4d74e6; margin-bottom: 6px;">Source(s) of Data</span>
+                           <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="substanceUseCheckbox" value="All"> All
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="substanceUseCheckbox" value="Agency" checked> Agency
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="substanceUseCheckbox" value="Social Media" checked> Social Media
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="substanceUseCheckbox" value="CSE Self-Reported" checked> CSE Self-Reported
+                              </label>
+                              <label style="display: flex; align-items: center; gap: 6px; font-weight: 500;">
+                              <input type="checkbox" class="substanceUseCheckbox" value="No CSE Self-Reported" checked> No CSE Self-Reported
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                     <div id="substanceUseChartContainer" style="min-height: 500px; margin: 20px auto; width: 100%; max-width: 1000px;">
+                        <canvas id="substanceUseChart"></canvas>
+                     </div>
+                     <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            // Substance Use data from the table
+                            const substanceUseData = {
+                                "Vapes (lifetime)": {"All": 62.74, "Agency": 78.85, "Social Media": 46.51, "CSE Self-Reported": 80.00, "No CSE Self-Reported": 45.35},
+                                "Hard Drugs (lifetime)": {"All": 29.71, "Agency": 43.19, "Social Media": 16.28, "CSE Self-Reported": 50.19, "No CSE Self-Reported": 8.98},
+                                "Misuse of Prescriptions (lifetime)": {"All": 29.54, "Agency": 35.00, "Social Media": 24.03, "CSE Self-Reported": 39.23, "No CSE Self-Reported": 19.77},
+                                "Four Consecutive Drinks in a Couple Hours (last 30 days)": {"All": 26.01, "Agency": 28.74, "Social Media": 23.26, "CSE Self-Reported": 37.55, "No CSE Self-Reported": 14.34},
+                                "Cigarettes (last 30 days)": {"All": 14.67, "Agency": 24.23, "Social Media": 5.04, "CSE Self-Reported": 25.67, "No CSE Self-Reported": 3.50},
+                                "STDs and HIV (lifetime)": {"All": 12.52, "Agency": 17.72, "Social Media": 7.23, "CSE Self-Reported": 21.03, "No CSE Self-Reported": 3.98},
+                                "Injections (lifetime)": {"All": 5.41, "Agency": 8.08, "Social Media": 2.71, "CSE Self-Reported": 10.34, "No CSE Self-Reported": 0.39}
+                            };
+                        
+                            const colorPalette = {
+                                "All": "rgba(52, 152, 219, 0.7)",
+                                "Agency": "rgba(231, 76, 60, 0.7)",
+                                "Social Media": "rgba(46, 204, 113, 0.7)",
+                                "CSE Self-Reported": "rgba(155, 89, 182, 0.7)",
+                                "No CSE Self-Reported": "rgba(243, 156, 18, 0.7)"
+                            };
+                        
+                            const borderColors = {
+                                "All": "rgba(52, 152, 219, 1)",
+                                "Agency": "rgba(231, 76, 60, 1)",
+                                "Social Media": "rgba(46, 204, 113, 1)",
+                                "CSE Self-Reported": "rgba(155, 89, 182, 1)",
+                                "No CSE Self-Reported": "rgba(243, 156, 18, 1)"
+                            };
+                        
+                            // Elements
+                            const substanceUseCheckboxes = document.querySelectorAll('.substanceUseCheckbox');
+                            let substanceUseChart;
+                            
+                            // Function to update the chart
+                            function updateSubstanceUseChart() {
+                                // Get selected data sources (from checkboxes)
+                                const selectedSources = [];
+                                substanceUseCheckboxes.forEach(checkbox => {
+                                    if (checkbox.checked) {
+                                        selectedSources.push(checkbox.value);
+                                    }
+                                });
+                                
+                                // Get labels (types of substance use)
+                                const labels = Object.keys(substanceUseData);
+                                
+                                // Create datasets for each selected source
+                                const datasets = selectedSources.map(source => {
+                                    return {
+                                        label: source,
+                                        data: labels.map(label => substanceUseData[label][source]),
+                                        backgroundColor: colorPalette[source] || getRandomColor(),
+                                        borderColor: borderColors[source] || getRandomColor(true),
+                                        borderWidth: 1
+                                    };
+                                });
+                                
+                                // Destroy existing chart if it exists
+                                if (substanceUseChart) {
+                                    substanceUseChart.destroy();
+                                }
+                                
+                                // Create the chart
+                                const ctx = document.getElementById('substanceUseChart').getContext('2d');
+                                substanceUseChart = new Chart(ctx, {
+                                    type: 'bar',
+                                    data: {
+                                        labels: labels,
+                                        datasets: datasets
+                                    },
+                                    options: {
+                                        indexAxis: 'y', // This makes the bars horizontal
+                                        responsive: true,
+                                        maintainAspectRatio: false,
+                                        barPercentage: 0.8,
+                                        categoryPercentage: 0.9,
+                                        plugins: {
+                                            title: {
+                                                display: true,
+                                                // text: 'Substance Use Prevalence (%)',
+                                                font: { size: 18 }
+                                            },
+                                            legend: { position: 'bottom' }
+                                        },
+                                        scales: {
+                                            x: {
+                                                beginAtZero: true,
+                                                max: 100,
+                                                grid: {
+                                                    drawTicks: true,
+                                                    tickLength: 10,
+                                                    tickColor: '#ccc',
+                                                    tickWidth: 1,
+                                                    tickAlign: 'outside',
+                                                    drawBorder: true,
+                                                    borderDash: [5, 5],
+                                                    borderDashOffset: 0.0,
+                                                    borderWidth: 1,
+                                                    borderColor: '#ccc',
+                                                    drawOnChartArea: true,
+                                                    display: true,
+                                                    ticks: {
+                                                        callback: function(value) {
+                                                            if (value === 25 || value === 50 || value === 75) {
+                                                                return value + '%';
+                                                            } else {
+                                                                return '';
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    plugins: [{
+                                        id: 'dataLabels',
+                                        afterDraw: function(chart) {
+                                            var ctx = chart.ctx;
+                                            chart.data.datasets.forEach(function(dataset, datasetIndex) {
+                                                var meta = chart.getDatasetMeta(datasetIndex);
+                                                if (!meta.hidden) {
+                                                    meta.data.forEach(function(element, index) {
+                                                        // Draw the text in black
+                                                        ctx.fillStyle = 'black';
+                                                        ctx.font = 'bold 12px Arial';
+                                                        ctx.textAlign = 'left';
+                                                        ctx.textBaseline = 'middle';
+                                                        
+                                                        var dataValue = dataset.data[index];
+                                                        var position = element.tooltipPosition();
+                                                        
+                                                        // Display value for all bars regardless of size
+                                                        ctx.fillText(dataValue + '%', position.x / 2 + element.x / 2, position.y);
+                                                    });
+                                                }
+                                            });
+                                        }
+                                    }]
+                                });
+                            }
+                        
+                            // Helper function for random colors (reusing from ACEs chart)
+                            function getRandomColor(isOpaque = false) {
+                                const r = Math.floor(Math.random() * 200);
+                                const g = Math.floor(Math.random() * 200);
+                                const b = Math.floor(Math.random() * 200);
+                                return isOpaque ? 
+                                    `rgba(${r}, ${g}, ${b}, 1)` :
+                                    `rgba(${r}, ${g}, ${b}, 0.7)`;
+                            }
+                            
+                            // Add event listeners
+                            substanceUseCheckboxes.forEach(checkbox => {
+                                checkbox.addEventListener('change', updateSubstanceUseChart);
+                            });
+                            
+                            // Initialize the chart on load
+                            updateSubstanceUseChart();
+                        });
+                     </script>
+                  </div>
+
+               <div class="question-navigation">
+                  <a href="research-question1.html" class="nav-button"><i class="fas fa-arrow-left"></i> Previous Question</a>
+                  <a href="research-question3.html" class="nav-button">Next Question <i class="fas fa-arrow-right"></i></a>
+               </div>
+            </div>
+         </section>
+      </main>
+      <footer style="margin-top: 50px;">
+         <div class="footer-content" style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto;">
+            <!-- Links Section -->
+            <div class="footer-links" style="display: flex; justify-content: center; width: 100%; margin: 0 auto;">
+               <ul style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 0; margin: 0; list-style: none;">
+                  <li><a href="index.html">About the Study</a></li>
+                  <li><a href="research-question-home.html">Research Questions Home</a></li>
+                  <li><a href="methodology.html">Methodology</a></li>
+                  <li><a href="recommendations.html">Recommendations</a></li>
+                  <li><a href="publications.html">Publications</a></li>
+                  <li><a href="team.html">Research Team</a></li>
+               </ul>
+            </div>
+            <!-- Logos Section (New Row) -->
+            <div class="logos" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 20px;">
+               <a href="https://www.northeastern.edu/"><img src="assets/images/N-Logo.png" alt="Northeastern Logo"></a>
+               <a href="https://www.unh.edu/"><img src="assets/images/UNHL.png" alt="UNH Logo"></a>
+               <a href="https://www.rti.org/"><img src="assets/images/RTIL.png" alt="RTI Logo"></a>
+               <a href="https://www.bu.edu/"><img src="assets/images/BUL.png" alt="BU Logo"></a>
+            </div>
+            <!-- Copyright Section (New Row) -->
+            <div class="footer-bottom" style="text-align: center; width: 100%;">
+               <p>&copy; 2025 All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="assets/js/animations.js"></script>
+   </body>
+</html>

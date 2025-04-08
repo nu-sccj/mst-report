@@ -1,0 +1,71 @@
+/* Accordion styling for research questions */
+.accordion {
+    margin-bottom: 30px;
+}
+
+.accordion-item {
+    margin-bottom: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(13, 48, 99, 0.1);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(77, 116, 230, 0.2);
+}
+
+.key-accordion-item {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border-bottom: 2px solid #0d3063;
+}
+
+.accordion-header:hover {
+    background-color: #f5f8ff;
+}
+
+.accordion-header h3 {
+    margin: 0;
+    color: #0d3063;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.accordion-content.active {
+    padding: 20px;
+    max-height: 2000px; /* Increased for larger content */
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+}
