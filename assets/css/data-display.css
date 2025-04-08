@@ -1,4 +1,11 @@
 /* Data display components styling */
+/* Data visualization containers - removing scrollbars */
+.data-visualization {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+}
+
 .research-data-item {
     display: flex;
     margin-bottom: 20px;
