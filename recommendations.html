@@ -17,6 +17,7 @@
     <link rel="icon" href="assets/images/logo.png" type="image/png">
     <!-- Component loader script -->
     <script src="assets/js/component-loader.js"></script>
+    <script src="assets/js/main.js"></script>
 </head>
 <body>
     <div class="awareness-background">
@@ -225,16 +226,6 @@
                     }
                 });
             });
-
-            // Open the first accordion by default
-            if (accordionHeaders.length > 0) {
-                const firstContent = accordionHeaders[0].nextElementSibling;
-                const firstButton = accordionHeaders[0].querySelector('.accordion-button i');
-                
-                firstContent.classList.add('active');
-                firstButton.classList.remove('fa-chevron-down');
-                firstButton.classList.add('fa-chevron-up');
-            }
         });
     </script>
 </body>
