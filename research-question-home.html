@@ -18,6 +18,31 @@
     <!-- Component loader script -->
     <script src="assets/js/component-loader.js"></script>
     <script src="assets/js/main.js"></script>
+    <style>
+        .question-card {
+            background: rgba(255, 255, 255, 0.6) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1) !important;
+            transition: all 0.3s ease !important;
+            height: 100% !important;
+            display: flex !important;
+            flex-direction: column !important;
+            border: 1px solid rgba(205, 233, 254, 0.3) !important;
+        }
+        .question-card:hover {
+            background-color: rgba(205, 233, 254, 0.4) !important;
+            transform: translateY(-5px) !important;
+            box-shadow: 0 10px 25px rgba(13, 48, 99, 0.2) !important;
+            border-color: rgba(13, 48, 99, 0.3) !important;
+        }
+        .card-icon {
+            color: #0d3063 !important;
+            transition: transform 0.3s ease !important;
+        }
+        .question-card:hover .card-icon {
+            transform: scale(1.1) !important;
+        }
+    </style>
 </head>
 <body>
     <div class="awareness-background">
@@ -80,13 +105,15 @@
             </div>
         </section>
 
+
+
         <section class="content-section">
             <div class="container">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
                     <!-- Question 1 Card -->
                     <a href="research-question1.html" class="question-card-link">
-                        <div class="question-card" style="background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(205, 233, 254, 0.3);">
-                            <div class="card-icon" style="color: #0d3063;"><i class="fas fa-heartbeat"></i></div>
+                        <div class="question-card">
+                            <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
                             <h3 style="color: #0d3063; font-size: var(--font-size-h3);">Question 1: <br>Physical and Psychological Health Concerns</h3>
                             <p style="font-size: 18px; flex-grow: 1;">What are the <strong>short and long term</strong> physical and psychological health concerns for young people who experience commercial sexual exploitation?</p>
                         </div>
@@ -94,8 +121,8 @@
                             
                     <!-- Question 2 Card -->
                     <a href="research-question2.html" class="question-card-link">
-                        <div class="question-card" style="background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(205, 233, 254, 0.3);">
-                            <div class="card-icon" style="color: #0d3063;"><i class="fas fa-flask"></i></div>
+                        <div class="question-card">
+                            <div class="card-icon"><i class="fas fa-flask"></i></div>
                             <h3 style="color: #0d3063; font-size: var(--font-size-h3);">Question 2: <br>Health Risk Behaviors</h3>
                             <p style="font-size: 18px; flex-grow: 1;">What <strong>health risk behaviors</strong> are associated with the experience of commercial sexual exploitation?</p>
                         </div>
@@ -103,8 +130,8 @@
                     
                     <!-- Question 3 Card -->
                     <a href="research-question3.html" class="question-card-link">
-                        <div class="question-card" style="background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(205, 233, 254, 0.3);">
-                            <div class="card-icon" style="color: #0d3063;"><i class="fas fa-brain"></i></div>
+                        <div class="question-card">
+                            <div class="card-icon"><i class="fas fa-brain"></i></div>
                             <h3 style="color: #0d3063; font-size: var(--font-size-h3);">Question 3: <br>Psychological Effects on Physical Health</h3>
                             <p style="font-size: 18px; flex-grow: 1;">How do <strong>psychological effects</strong> of commercial sexual exploitation impact <strong>physical health outcomes</strong>?</p>
                         </div>
@@ -112,8 +139,8 @@
                     
                     <!-- Question 4 Card -->
                     <a href="research-question4.html" class="question-card-link">
-                        <div class="question-card" style="background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(205, 233, 254, 0.3);">
-                            <div class="card-icon" style="color: #0d3063;"><i class="fas fa-hospital-user"></i></div>
+                        <div class="question-card">
+                            <div class="card-icon"><i class="fas fa-hospital-user"></i></div>
                             <h3 style="color: #0d3063; font-size: var(--font-size-h3);">Question 4: <br>Healthcare Access</h3>
                             <p style="font-size: 18px; flex-grow: 1;">What are patterns of <strong>healthcare access and usage</strong> among youth who have experienced commercial sexual exploitation?</p>
                         </div>
@@ -121,8 +148,8 @@
                     
                     <!-- Question 5 Card -->
                     <a href="research-question5.html" class="question-card-link">
-                        <div class="question-card" style="background: rgba(255, 255, 255, 0.6); border-radius: 20px; box-shadow: 0 5px 15px rgba(13, 48, 99, 0.1); transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column; border: 1px solid rgba(205, 233, 254, 0.3);">
-                            <div class="card-icon" style="color: #0d3063;"><i class="fas fa-ban"></i></div>
+                        <div class="question-card">
+                            <div class="card-icon"><i class="fas fa-ban"></i></div>
                             <h3 style="color: #0d3063; font-size: var(--font-size-h3);">Question 5: <br> Barriers to Health & Wellness</h3>
                             <p style="font-size: 18px; flex-grow: 1;">What are the <strong>barriers</strong> to achieving better health and wellness outcomes for youth with commercial sexual exploitation histories?</p>
                         </div>
