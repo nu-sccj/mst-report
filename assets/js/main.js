@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     accordionHeaders.forEach(header => {
         header.addEventListener('click', function() {
             const content = this.nextElementSibling;
-            const icon = this.querySelector('.toggle-icon i');
+            // Check for both possible icon selectors
+            const icon = this.querySelector('.toggle-icon i') || this.querySelector('.accordion-button i');
             
             // Toggle the active class on the content
             content.classList.toggle('active');
@@ -16,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (icon.classList.contains('fa-plus')) {
                     icon.classList.remove('fa-plus');
                     icon.classList.add('fa-minus');
+                } else if (icon.classList.contains('fa-chevron-down')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else if (icon.classList.contains('fa-chevron-up')) {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
                 } else {
                     icon.classList.remove('fa-minus');
                     icon.classList.add('fa-plus');
@@ -26,12 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
             accordionHeaders.forEach(otherHeader => {
                 if (otherHeader !== header) {
                     const otherContent = otherHeader.nextElementSibling;
-                    const otherIcon = otherHeader.querySelector('.toggle-icon i');
+                    const otherIcon = otherHeader.querySelector('.toggle-icon i') || otherHeader.querySelector('.accordion-button i');
                     
                     otherContent.classList.remove('active');
-                    if (otherIcon && otherIcon.classList.contains('fa-minus')) {
-                        otherIcon.classList.remove('fa-minus');
-                        otherIcon.classList.add('fa-plus');
+                    if (otherIcon) {
+                        if (otherIcon.classList.contains('fa-minus')) {
+                            otherIcon.classList.remove('fa-minus');
+                            otherIcon.classList.add('fa-plus');
+                        } else if (otherIcon.classList.contains('fa-chevron-up')) {
+                            otherIcon.classList.remove('fa-chevron-up');
+                            otherIcon.classList.add('fa-chevron-down');
+                        }
                     }
                 }
             });
