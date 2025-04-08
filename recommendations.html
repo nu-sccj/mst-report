@@ -203,30 +203,5 @@
             </div>
         </div>
 </footer>
-    <!-- JavaScript for accordion functionality -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-            
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const button = this.querySelector('.accordion-button i');
-                    
-                    // Toggle active class on content
-                    content.classList.toggle('active');
-                    
-                    // Toggle icon
-                    if (content.classList.contains('active')) {
-                        button.classList.remove('fa-chevron-down');
-                        button.classList.add('fa-chevron-up');
-                    } else {
-                        button.classList.remove('fa-chevron-up');
-                        button.classList.add('fa-chevron-down');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
