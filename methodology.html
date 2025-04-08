@@ -64,7 +64,6 @@
          <section class="hero">
             <h1 class="animate-on-scroll">Research Methodology</h1>
          </section>
-         <section class="content-section">
             <div class="container">
             <div class="data-visualization" style="margin: 30px 0; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 64, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(77, 116, 230, 0.2); position: relative; overflow: auto; max-height: calc(100vh - 200px);">
                <div class="column animate-on-scroll">
@@ -110,12 +109,11 @@
                   <h3><i class="fas fa-users"></i> Participant Demographics</h3>
                   <p>Survey participants (n=534) represented diverse backgrounds across race, gender identity, sexual orientation, and geographic regions. The chart below shows the demographic breakdown of participants recruited through agency referrals and social media.</p>
                </div>
-               <div class="grid-2">
-                  <div class="column animate-on-scroll">
-                     <!-- Demographic descriptions -->
-                     <div class="demographic-descriptions" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
-                        <div class="demographic-item" style="flex: 1 1 300px; background: #fdfdfd; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                           <h4 style="margin-top: 0; margin-bottom: 0.75rem; color: #003366;">Gender Identity</h4>
+               <div class="column animate-on-scroll">
+                  <!-- Demographic descriptions -->
+                  <div class="demographic-descriptions" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1rem;">
+                     <div class="demographic-item" style="flex: 1 1 300px; background: #fdfdfd; border-radius: 1rem; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                        <h4 style="margin-top: 0; margin-bottom: 0.75rem; color: #003366;">Gender Identity</h4>
                            <p style="margin: 0; font-size: 0.95rem; line-height: 1.5;">
                               Two-thirds of the respondents (67%) identified as female, 11% as male, 6% as transman, and 2% as transwomen. An additional 13% identified as genderqueer.
                            </p>
@@ -140,290 +138,8 @@
                         </div>
                      </div>
                   </div>
-                  <div class="column animate-on-scroll">
-                     <!-- Dropdown for demographic category selection -->
-                     <div style="margin: 20px 0; text-align: center;">
-                        <label for="demographicSelect" style="display: inline-block; margin-right: 10px; font-weight: 500;">Select Demographic Category:</label>
-                        <select id="demographicSelect" style="padding: 8px 10px; border-radius: 6px; border: 1px solid #ccc; min-width: 200px;">
-                           <option value="race">Race</option>
-                           <option value="gender">Gender</option>
-                           <option value="orientation">Sexual Orientation</option>
-                           <option value="region">Region</option>
-                        </select>
-                     </div>
-                     <!-- Container for demographic chart -->
-                     <div style="height: 300px; margin: 20px auto; width: 100%;">
-                        <canvas id="demographicChart"></canvas>
-                     </div>
-                     <!-- Script for demographic chart -->
-                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-                     <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            // Demographic data
-                            const demographicData = {
-                                race: {
-                                    labels: ['White', 'Black', 'Latino/a/x', 'Asian', 'Other', 'Mixed'],
-                                    datasets: [
-                                        {
-                                            label: 'All',
-                                            data: [38.3, 17.6, 21.5, 3.2, 0.9, 18.4],
-                                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                                            borderColor: 'rgba(52, 152, 219, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Agency',
-                                            data: [17.3, 22.6, 34.2, 1.5, 1.5, 22.9],
-                                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                                            borderColor: 'rgba(231, 76, 60, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Social Media',
-                                            data: [58.9, 12.6, 8.9, 4.8, 0.7, 13.8],
-                                            backgroundColor: 'rgba(46, 204, 113, 0.7)',
-                                            borderColor: 'rgba(46, 204, 113, 1)',
-                                            borderWidth: 1
-                                        }
-                                    ]
-                                },
-                                gender: {
-                                    labels: ['Male', 'Female', 'Transman', 'Transwoman', 'Gender queer'],
-                                    datasets: [
-                                        {
-                                            label: 'All',
-                                            data: [11.3, 67.8, 5.8, 1.9, 13.1],
-                                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                                            borderColor: 'rgba(52, 152, 219, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Agency',
-                                            data: [10.3, 75.6, 1.5, 2.3, 9.8],
-                                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                                            borderColor: 'rgba(231, 76, 60, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Social Media',
-                                            data: [11.9, 59.7, 10.1, 1.5, 16.4],
-                                            backgroundColor: 'rgba(46, 204, 113, 0.7)',
-                                            borderColor: 'rgba(46, 204, 113, 1)',
-                                            borderWidth: 1
-                                        }
-                                    ]
-                                },
-                                orientation: {
-                                    labels: ['Straight', 'Gay', 'Lesbian', 'Bisexual', 'Queer', 'Questioning'],
-                                    datasets: [
-                                        {
-                                            label: 'All',
-                                            data: [34.4, 4.7, 7.4, 32.4, 15.3, 5.7],
-                                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                                            borderColor: 'rgba(52, 152, 219, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Agency',
-                                            data: [40.6, 3, 4.5, 32.7, 9.4, 6.3],
-                                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                                            borderColor: 'rgba(231, 76, 60, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Social Media',
-                                            data: [26.8, 6.3, 10.1, 30.9, 20.5, 4.8],
-                                            backgroundColor: 'rgba(46, 204, 113, 0.7)',
-                                            borderColor: 'rgba(46, 204, 113, 1)',
-                                            borderWidth: 1
-                                        }
-                                    ]
-                                },
-                                region: {
-                                    labels: ['Northeast', 'South', 'Midwest', 'West'],
-                                    datasets: [
-                                        {
-                                            label: 'All',
-                                            data: [43.78, 32.89, 11.11, 12.22],
-                                            backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                                            borderColor: 'rgba(52, 152, 219, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Agency',
-                                            data: [60.90, 18.80, 1.50, 5.64],
-                                            backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                                            borderColor: 'rgba(231, 76, 60, 1)',
-                                            borderWidth: 1
-                                        },
-                                        {
-                                            label: 'Social Media',
-                                            data: [13.06, 36.57, 17.16, 16.79],
-                                            backgroundColor: 'rgba(46, 204, 113, 0.7)',
-                                            borderColor: 'rgba(46, 204, 113, 1)',
-                                            borderWidth: 1
-                                        }
-                                    ]
-                                }
-                            };
-                            
-                            // Get the dropdown element
-                            const demographicSelect = document.getElementById('demographicSelect');
-                            // Get the canvas context
-                            const ctx = document.getElementById('demographicChart').getContext('2d');
-                            
-                            // Chart instance
-                            let demographicChart;
-                            
-                            // Function to normalize data so that each category sums to 100%
-                            function normalizeStackedData(datasets) {
-                                let numCategories = datasets[0].data.length;
-                                let columnSums = new Array(numCategories).fill(0);
-                        
-                                // Compute the sum across all datasets for each category
-                                datasets.forEach(dataset => {
-                                    dataset.data.forEach((value, index) => {
-                                        columnSums[index] += value;
-                                    });
-                                });
-                        
-                                // Normalize each dataset's values to sum to 100% across categories
-                                datasets.forEach(dataset => {
-                                    dataset.data = dataset.data.map((value, index) => (value / columnSums[index]) * 100);
-                                });
-                        
-                                return datasets;
-                            }
-                        
-                            // Function to update the demographic chart
-                            // Function to normalize data so that each category sums to 100%
-                            function normalizeStackedData(datasets) {
-                                let numCategories = datasets[0].data.length;
-                                let columnSums = new Array(numCategories).fill(0);
-                        
-                                // Compute the sum across all datasets for each category
-                                datasets.forEach(dataset => {
-                                    dataset.data.forEach((value, index) => {
-                                        columnSums[index] += value;
-                                    });
-                                });
-                        
-                                // Normalize each dataset's values to sum to 100% across categories
-                                datasets.forEach(dataset => {
-                                    dataset.data = dataset.data.map((value, index) => (value / columnSums[index]) * 100);
-                                });
-                        
-                                return datasets;
-                            }
-                        
-                            // Function to update the demographic chart
-                            function updateDemographicChart() {
-                                const selectedDemographic = demographicSelect.value;
-                                let chartData = demographicData[selectedDemographic];
-                        
-                                // Normalize dataset values to ensure each category sums to 100%
-                                let normalizedDatasets = normalizeStackedData(chartData.datasets);
-                        
-                                // Destroy existing chart if it exists
-                                if (demographicChart) {
-                                    demographicChart.destroy();
-                                }
-                        
-                                // Create a new stacked bar chart with data labels
-                                demographicChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: chartData.labels,
-                                        datasets: normalizedDatasets
-                                    },
-                                    options: {
-                                        responsive: true,
-                                        maintainAspectRatio: false,
-                                        scales: {
-                                            x: {
-                                                stacked: true,
-                                                title: {
-                                                    display: true,
-                                                    text: 'Category'
-                                                }
-                                            },
-                                            y: {
-                                                stacked: true,
-                                                beginAtZero: true,
-                                                max: 100,
-                                                title: {
-                                                    display: true,
-                                                    text: 'Percentage (%)'
-                                                },
-                                                ticks: {
-                                                    callback: function(value) {
-                                                        return value + '%';
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        plugins: {
-                                            title: {
-                                                display: true,
-                                                text: selectedDemographic.charAt(0).toUpperCase() + selectedDemographic.slice(1) + ' Demographics',
-                                                font: { size: 18 }
-                                            },
-                                            tooltip: {
-                                                callbacks: {
-                                                    label: function(context) {
-                                                        let label = context.dataset.label || '';
-                                                        if (label) {
-                                                            label += ': ';
-                                                        }
-                                                        if (context.parsed.y !== null) {
-                                                            label += context.parsed.y.toFixed(1) + '%';
-                                                        }
-                                                        return label;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    plugins: [{
-                                        id: 'dataLabels',
-                                        afterDraw: function(chart) {
-                                            var ctx = chart.ctx;
-                                            chart.data.datasets.forEach(function(dataset, datasetIndex) {
-                                                var meta = chart.getDatasetMeta(datasetIndex);
-                                                if (!meta.hidden) {
-                                                    meta.data.forEach(function(element, index) {
-                                                        var dataValue = dataset.data[index];
-                                                        if (dataValue > 3) { // Show label only if the section is large enough
-                                                            ctx.fillStyle = 'black';
-                                                            ctx.font = 'bold 11px Arial';
-                                                            ctx.textAlign = 'center';
-                                                            ctx.textBaseline = 'middle';
-                        
-                                                            var position = element.tooltipPosition();
-                                                            ctx.fillText(dataValue.toFixed(1) + '%', position.x, position.y);
-                                                        }
-                                                    });
-                                                }
-                                            });
-                                        }
-                                    }]
-                                });
-                            }
-                        
-                            // Add event listener to the dropdown
-                            demographicSelect.addEventListener('change', updateDemographicChart);
-                        
-                            // Initialize the chart
-                            updateDemographicChart();
-                        });
-                     </script>
-                  </div>
-               </div>
             </div>
-         </section>
          <!-- 3. RECRUITMENT METHODOLOGIES SECTION -->
-         <section class="content-section">
-            <div class="container">
                <div class="data-visualization" style="margin: 30px 0; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0, 0, 64, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(77, 116, 230, 0.2); position: relative; overflow: auto; max-height: calc(100vh - 200px);">
                   <h2 class="text-center animate-on-scroll" style="text-align: center; font-size: 1.75rem; margin-bottom: 2rem; color: #002244;">
                      How Participants Were Recruited
@@ -625,8 +341,6 @@
                      </div>
                   </div>
                </div>
-            </div>
-         </section>
       </main>
       <footer style="margin-top: 50px;">
          <div class="footer-content" style="display: flex; flex-direction: column; flex-wrap: wrap; gap: 20px; width: 100%; max-width: 1200px; margin: 0 auto;">
