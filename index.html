@@ -63,7 +63,16 @@
                 <li><a href="recommendations.html">Recommendations</a></li>
                 <li><a href="publications.html">Publications</a></li> 
                 <li><a href="team.html">Research Team</a></li>
-                <li><a href="assets/Understanding Physical and Psychological Health MST_Technical Report.pdf" class="full-report-btn" target="_blank"><strong>Read Full Report Here</strong></a></li>
+                <li><a href="assets/Understanding Physical and Psychological Health MST_Technical Report.pdf" 
+                       class="full-report-btn" 
+                       target="_blank"
+                       onclick="gtag('event', 'download', {
+                           'event_category': 'PDF',
+                           'event_label': 'Full Technical Report',
+                           'value': 1
+                       });">
+                       <strong>Read Full Report Here</strong>
+                    </a></li>
             </ul>
         </nav>
     </header>
